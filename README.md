@@ -1,12 +1,12 @@
 # Criar um aplicativo web de consulta a API do [GitHub](https://github.com)
 
-Criar um aplicativo Web para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Java. Basear-se no mockup fornecido:
+Criar um aplicativo Web para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Javascript. Basear-se no mockup fornecido:
 
 ![Captura de tela de 2015-10-22 11-28-03.png](https://bitbucket.org/repo/7ndaaA/images/3102804929-Captura%20de%20tela%20de%202015-10-22%2011-28-03.png)
 
 ### **Deve conter** ###
 
-- __Lista de repositórios__. Exemplo de chamada na API: `https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1`
+- __Lista de repositórios__. Exemplo de chamada na API: `https://api.github.com/search/repositories?q=language:Javascript&sort=stars&page=1`
   * Paginação na tela de lista, com endless scroll / scroll infinito (incrementando o parâmetro `page`).
   * Cada repositório deve exibir Nome do repositório, Descrição do Repositório, Nome / Foto do autor, Número de Stars, Número de Forks
   * Ao clicar em um item, deve levar a lista de Pull Requests do repositório
