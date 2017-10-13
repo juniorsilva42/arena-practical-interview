@@ -1,4 +1,4 @@
-# Criar um aplicativo web de consulta a API do [GitHub](https://github.com)#
+# Criar um aplicativo web de consulta a API do [GitHub](https://github.com)
 
 Criar um aplicativo Web para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Java. Basear-se no mockup fornecido:
 
