@@ -12,9 +12,10 @@ Criar um aplicativo Web para consultar a [API do GitHub](https://developer.githu
   * Ao clicar em um item, deve levar a lista de Pull Requests do repositório
 - __Pull Requests de um repositório__. Exemplo de chamada na API: `https://api.github.com/repos/<criador>/<repositório>/pulls`
   * Cada item da lista deve exibir Nome / Foto do autor do PR, Título do PR, Data do PR e Body do PR
-  * Ao tocar em um item, deve abrir no browser a página do Pull Request em questão
+  * Ao clicar em um item, deve abrir no browser a página do Pull Request em questão
 
 ### **A página DEVE ** ##
+* Conter sistema de build com melhores práticas de performance
 * Ser implementada em React/Redux.
 * Ser responsiva (mobile-first)
 
