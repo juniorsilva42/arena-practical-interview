@@ -14,14 +14,15 @@ Criar um aplicativo Web para consultar a [API do GitHub](https://developer.githu
   * Cada item da lista deve exibir Nome / Foto do autor do PR, Título do PR, Data do PR e Body do PR
   * Ao clicar em um item, deve abrir no browser a página do Pull Request em questão
 
-### **A página DEVE ** ##
+### **O projeto DEVE ** ##
 * Conter sistema de build com melhores práticas de performance
 * Ser implementada em React/Redux
 * Ser responsiva (mobile-first)
+* Conter testes unitários
+* Utilizar styled components
 
 ### **Ganha + pontos se conter** ###
 
-* Testes no projeto (unitários e por tela)
 * Testes funcionais (que naveguem pelo aplicativo como casos de uso)
 
 ### **OBS** ###
