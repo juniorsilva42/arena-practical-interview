@@ -9,50 +9,60 @@ const App = () => {
   /*
    * Redux store
   */
-  const pullRequests = useSelector(state => state);
+  const { repos, pullRequests } = useSelector((state) => state);
   const dispatcher = useDispatch();
 
   /*
    * Local state
-  */  
+  */
   const [isLoading, setIsLoading] = useState(false);
 
   const pageIsLoading = () => window.addEventListener('load', () => setIsLoading(true));
 
   useEffect(() => pageIsLoading());
 
-  const dispatchAndGetRepos = (page = 1) => {
+  /*
+   * Dispatch action to get all repos
+  */
+  const dispatchAndGetRepos = ({ page }) => {
     dispatcher(
       getRepos({
         data: {
           query: 'language:Javascript',
           sortBy: 'stars',
           page,
-        }
-      })
+        },
+      }),
     );
   };
 
+  /*
+   * Dispatch action to pull request a given user and repo
+  */
   const dispatchAndGetPullRequests = ({ creator, repo }) => {
     dispatcher(
       getPullRequests({
         data: {
           creator,
           repo,
-        }
-      })
+        },
+      }),
     );
   };
 
   useEffect(() => {
-    console.log(pullRequests);
-  }, [pullRequests]);
+    // dispatchAndGetPullRequests({ creator: 'stationfy', repo: 'desafio-web' })}
+    console.log(repos);
+  }, [repos]);
 
   return (
     <>
       <BarProgressIndicator loading={isLoading} />
 
-      <p onClick={() => dispatchAndGetPullRequests({ creator: 'stationfy', repo: 'desafio-web' })}>Hello world from app</p>
+      <p 
+        onClick={() => dispatchAndGetRepos({ page: 1 })}>
+          Hello world from app
+      </p>
     </>
   );
 };
