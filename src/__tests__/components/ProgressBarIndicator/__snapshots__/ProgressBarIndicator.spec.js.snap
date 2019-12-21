@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBarIndicator Component should render the ProgressBarIndicator Component correctly if the page is loading 1`] = `
+<ProgressBarIndicator
+  loading={true}
+/>
+`;
