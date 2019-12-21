@@ -7,7 +7,8 @@
     "dev": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js --mode development",
     "build": "./node_modules/.bin/webpack --config ./config/webpack.dev.js",
     "build:production": "./node_modules/.bin/webpack --config ./config/webpack.prod.js",
-    "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.prod.js"
+    "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.prod.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.19.1",
