@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BarProgressIndicator from './shared/components/ProgressBarIndicator';
-import { getRepos } from './store/ducks/repos';
 
+import { getRepos } from './store/ducks/repos';
+import { getPullRequests } from './store/ducks/pullRequests';
 
 const App = () => {
   /*
    * Redux store
   */
-  const repos = useSelector(state => state.repos);
+  const { repos, pullRequests } = useSelector(state => state);
   const dispatcher = useDispatch();
 
   /*
@@ -20,23 +21,38 @@ const App = () => {
 
   useEffect(() => pageIsLoading());
 
-  const dispatchAndGetRepos = () => {
+  const dispatchAndGetRepos = (page = 1) => {
     dispatcher(
       getRepos({
         data: {
           query: 'language:Javascript',
           sortBy: 'stars',
-          page: 1,
+          page,
         }
       })
     );
   };
 
+  const dispatchAndGetPullRequests = ({ creator, repo }) => {
+    dispatcher(
+      getPullRequests({
+        data: {
+          creator,
+          repo,
+        }
+      })
+    );
+  };
+
+  useEffect(() => {
+    console.log(pullRequests);
+  }, [pullRequests]);
+
   return (
     <>
       <BarProgressIndicator loading={isLoading} />
 
-      <p onClick={() => dispatchAndGetRepos()}>Hello world from app</p>
+      <p onClick={() => dispatchAndGetPullRequests({ creator: 'stationfy', repo: 'desafio-web' })}>Hello world from app</p>
     </>
   );
 };

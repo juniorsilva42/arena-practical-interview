@@ -5,9 +5,9 @@ import { doRequest } from '../../shared/utils/requestHandler';
  * Action Types
  * */
 export const Types = {
-  REPOS_REQUESTED: 'REPOS/REQUESTED',
-  REPOS_FETCHED: 'REPOS/FETCHED',
-  REPOS_FAILED: 'REPOS/FAILED',
+  PULL_REQUESTS_REQUESTED: 'PULLREQUESTS/REQUESTED',
+  PULL_REQUESTS_FETCHED: 'PULLREQUESTS/FETCHED',
+  PULL_REQUESTS_FAILED: 'PULLREQUESTS/FAILED',
 };
 
 /*
@@ -22,16 +22,16 @@ const initialState = {
  * Reducer
  */
 export default createReducer(initialState, {
-  [Types.REPOS_REQUESTED]: (state) => ({
+  [Types.PULL_REQUESTS_REQUESTED]: (state) => ({
     ...state,
     isLoading: true,
   }),
-  [Types.REPOS_FETCHED]: (state, action) => ({
+  [Types.PULL_REQUESTS_FETCHED]: (state, action) => ({
     ...state,
     data: action.payload.data,
     isLoading: false,
   }),
-  [Types.REPOS_FAILED]: (state, action) => ({
+  [Types.PULL_REQUESTS_FAILED]: (state, action) => ({
     ...state,
     isLoading: false,
     error: action.payload,
@@ -42,24 +42,19 @@ export default createReducer(initialState, {
  * Action Creators
  * */
 // Get Repos ACTION
-export const getRepos = ({ data }) => (dispatch) => {
-  dispatch({ type: Types.REPOS_REQUESTED });
+export const getPullRequests = ({ data }) => (dispatch) => {
+  dispatch({ type: Types.PULL_REQUESTS_REQUESTED });
 
-  const { query, sortBy, page } = data;
+  const { creator, repo } = data;
 
   // Do request on Github API
   doRequest({
     method: 'GET',
-    endpoint: 'search/repositories',
-    params: {
-      q: query,
-      sort: sortBy,
-      page,
-    },
+    endpoint: `repos/${creator}/${repo}/pulls`,
   })
     .then((response) => {
       dispatch({
-        type: Types.REPOS_FETCHED,
+        type: Types.PULL_REQUESTS_FETCHED,
         payload: {
           data: response.data,
         },
@@ -67,7 +62,7 @@ export const getRepos = ({ data }) => (dispatch) => {
     })
     .catch((error) => {
       dispatch({
-        type: Types.REPOS_FAILED,
+        type: Types.PULL_REQUESTS_FAILED,
         payload: error,
         error: true,
       });
