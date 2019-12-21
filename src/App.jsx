@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Logo from './shared/components/Logo';
 import Footer from './shared/components/Footer';
+import PageContainer from './shared/components/PageContainer';
 import BarProgressIndicator from './shared/components/ProgressBarIndicator';
 import { getRepos } from './store/ducks/repos';
 import { getPullRequests } from './store/ducks/pullRequests';
@@ -61,16 +62,17 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-
-      <Logo />
-      <Footer />
-
       <BarProgressIndicator loading={isLoading} />
+      
+      <Logo />
 
-      <p 
-        onClick={() => dispatchAndGetRepos({ page: 1 })}>
-          Hello world from app
-      </p>
+      <PageContainer>
+        <p onClick={() => dispatchAndGetRepos({ page: 1 })}>
+            Hello world from app
+        </p>
+      </PageContainer>
+
+      <Footer />
     </>
   );
 };
