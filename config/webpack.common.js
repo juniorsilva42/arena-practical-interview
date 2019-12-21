@@ -4,8 +4,8 @@ module.exports = {
   entry: ['@babel/polyfill', './src/index.jsx'],
   output: {
     path: __dirname + '/public',
-    filename: 'bundle.js',
-    chunkFilename: '[name].chunk.js',
+    filename: 'app-bundle.js',
+    chunkFilename: '[name].js',
   },
   resolve: {
 	  modules: ['node_modules', './src'],
@@ -22,5 +22,16 @@ module.exports = {
   },
   devServer: {
     port,
-  }
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
+  },
 };

@@ -10,10 +10,21 @@ module.exports = merge(webpackCommonConfig, {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
   ],
-  devtool: "source-map",
 	devServer: {
     hot: true,
     contentBase: './public',
-	}
+	},
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+					chunks: 'all',
+					enforce: true,
+        },
+      },
+		},
+		minimize: true,
+	},
 });
-

@@ -10,12 +10,22 @@ module.exports = merge(webpackCommonConfig, {
 				warnings: false
 			},
 			minimize: true,
-			sourceMap: false
+			sourceMap: false,
 		}),
 		new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
 	],
-	devtool: "source-map",
 	devServer: {
 		compress: true,
 	},
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
+  },
 });
