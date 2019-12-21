@@ -1,7 +1,13 @@
+/**
+ * External Dependencies
+ */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Logo from './shared/components/Logo';
+/**
+ * Internal Dependencies
+ */
+import Header from './shared/components/Header';
 import Footer from './shared/components/Footer';
 import PageContainer from './shared/components/PageContainer';
 import BarProgressIndicator from './shared/components/ProgressBarIndicator';
@@ -63,8 +69,8 @@ const App = () => {
     <>
       <GlobalStyle />
       <BarProgressIndicator loading={isLoading} />
-      
-      <Logo />
+
+      <Header />
 
       <PageContainer>
         <p onClick={() => dispatchAndGetRepos({ page: 1 })}>
