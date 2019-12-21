@@ -1,4 +1,5 @@
 import { createReducer } from '../helpers';
+import { doRequest } from '../../shared/utils/requestHandler';
 
 /*
  * Action Types
@@ -13,7 +14,7 @@ export const Types = {
  * Initial State
  * */
 const initialState = {
-  repos: [],
+  data: [],
   isLoading: false,
 };
 
@@ -21,12 +22,13 @@ const initialState = {
  * Reducer
  */
 export default createReducer(initialState, {
-  [Types.REPOS_REQUEST]: (state, action) => ({
+  [Types.REPOS_REQUEST]: (state) => ({
     ...state,
     isLoading: true,
   }),
   [Types.REPOS_FETCHED]: (state, action) => ({
     ...state,
+    data: action.payload.data,
     isLoading: false,
   }),
   [Types.REPOS_FAILED]: (state, action) => ({
@@ -40,6 +42,32 @@ export default createReducer(initialState, {
  * Action Creators
  * */
 // Get Repos ACTION
-export const getRepos = data => (dispatch, getState) => {
-  dispatch({ type: Types.REPOS_REQUEST, payload: data });
+export const getRepos = ({ data }) => (dispatch) => {
+  dispatch({ type: Types.REPOS_REQUEST });
+
+  // Do request on Github API
+  doRequest({
+    method: 'GET',
+    endpoint: 'search/repositories',
+    params: {
+      q: data.query,
+      sort: data.sortBy,
+      page: data.page,
+    },
+  })
+    .then((response) => {
+      dispatch({
+        type: Types.REPOS_FETCHED,
+        payload: {
+          data: response.data,
+        },
+      });
+    })
+    .catch((error) => {
+      dispatch({
+        type: Types.REPOS_FAILED,
+        payload: error,
+        error: true,
+      });
+    });
 };
