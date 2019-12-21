@@ -5,23 +5,26 @@ import logoSrc from '../../../../../public/assets/images/logo-arena.svg';
 import { device } from '../../../theme/settings/screens';
 
 export const LogoContainer = styled.div`
-  width: 100vh;
+  width: 100vw;
   display: flex;
   flex-flow: row wrap;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 465px;
+
   & p {
-    margin: 4px;
+    margin: 2px 8px;
     font-weight: 400;
     color: #cdcdcd;
     font-size: 1.2rem;
   }
+
   @media ${device.tablet} {
     p {
       margin-top: 8px;
       font-size: 0.99rem;
     }
   }
+
   @media ${device.mobile} {
     float: left;
     margin: 0 10px;
@@ -33,7 +36,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const Figure = styled.figure`
-  height: 30px;
+  height: 23px;
   margin: 0;
 `;
 

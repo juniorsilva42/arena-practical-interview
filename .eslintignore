@@ -2,3 +2,4 @@
 # Ignore built files except build/index.js
 /src/__tests__
 /src/shared/theme/
+/src/shared/components/**/styles
