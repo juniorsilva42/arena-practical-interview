@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { Reset } from 'styled-reset';
-import { LoadFonts } from './index';
+import { LoadFonts, Normalize } from './index';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -15,4 +15,5 @@ export const GlobalStyle = createGlobalStyle`
 
   ${Reset}
   ${LoadFonts}
+  ${Normalize}
 `;

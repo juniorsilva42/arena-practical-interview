@@ -24,7 +24,13 @@ module.exports = {
           loader: 'url-loader',
         },
       },
-		],
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          { loader: 'file-loader' },
+        ],
+      },
+    ],
   },
   devServer: {
     port,

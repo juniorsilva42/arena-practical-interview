@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import BarProgressIndicator from './shared/components/ProgressBarIndicator';
 
+import Logo from './shared/components/Logo';
+import BarProgressIndicator from './shared/components/ProgressBarIndicator';
 import { getRepos } from './store/ducks/repos';
 import { getPullRequests } from './store/ducks/pullRequests';
 import { GlobalStyle } from './shared/theme/core';
@@ -59,6 +60,8 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
+
+      <Logo />
 
       <BarProgressIndicator loading={isLoading} />
 
