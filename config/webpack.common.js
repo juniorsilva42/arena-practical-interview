@@ -17,7 +17,13 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
-			},
+      },
+      {
+        test: /\.(woff|woff2|ttf)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
 		],
   },
   devServer: {

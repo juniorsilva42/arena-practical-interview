@@ -4,6 +4,7 @@ import BarProgressIndicator from './shared/components/ProgressBarIndicator';
 
 import { getRepos } from './store/ducks/repos';
 import { getPullRequests } from './store/ducks/pullRequests';
+import { GlobalStyle } from './shared/theme/core';
 
 const App = () => {
   /*
@@ -57,6 +58,8 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
+
       <BarProgressIndicator loading={isLoading} />
 
       <p 

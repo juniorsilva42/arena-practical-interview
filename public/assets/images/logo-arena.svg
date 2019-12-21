@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 215.57899 30.999999"
+   version="1.1"
+   id="svg883"
+   sodipodi:docname="logo-arena.svg"
+   width="215.57899"
+   height="31"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata887">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Ativo 15</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview885"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.3359439"
+     inkscape:cx="259.211"
+     inkscape:cy="37.275318"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg883" />
+  <defs
+     id="defs857">
+    <style
+       id="style838">.cls-1{fill:url(#Gradiente_sem_nome_13);}.cls-2{fill:url(#Gradiente_sem_nome_13-2);}.cls-3{fill:url(#Gradiente_sem_nome_13-3);}.cls-4{fill:url(#Gradiente_sem_nome_13-4);}.cls-5{fill:url(#Gradiente_sem_nome_13-5);}.cls-6{fill:url(#Gradiente_sem_nome_37);}.cls-7{fill:url(#Gradiente_sem_nome_13-6);}.cls-8{fill:url(#Gradiente_sem_nome_13-7);}.cls-9{fill:url(#Gradiente_sem_nome_13-9);}</style>
+    <linearGradient
+       id="Gradiente_sem_nome_13"
+       x1="98.209999"
+       y1="36.959999"
+       x2="98.209999"
+       y2="73.059998"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#765195"
+         id="stop840" />
+      <stop
+         offset="1"
+         stop-color="#5e438e"
+         id="stop842" />
+    </linearGradient>
+    <linearGradient
+       id="Gradiente_sem_nome_13-2"
+       x1="156.07001"
+       y1="37.27"
+       x2="156.07001"
+       y2="110.35"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       id="Gradiente_sem_nome_13-3"
+       x1="233.12"
+       y1="36.959999"
+       x2="233.12"
+       y2="104.34"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       id="Gradiente_sem_nome_13-4"
+       x1="309.54999"
+       y1="37.139999"
+       x2="309.54999"
+       y2="109.55"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       id="Gradiente_sem_nome_13-5"
+       x1="36.189999"
+       y1="37.119999"
+       x2="36.189999"
+       y2="109.5"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       id="Gradiente_sem_nome_37"
+       x1="28.93"
+       y1="31.73"
+       x2="70.190002"
+       y2="68.68"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#070308"
+         stop-opacity="0.2"
+         id="stop849" />
+      <stop
+         offset="1"
+         stop-color="#070308"
+         stop-opacity="0"
+         id="stop851" />
+    </linearGradient>
+    <linearGradient
+       id="Gradiente_sem_nome_13-6"
+       x1="462.47"
+       y1="44.75"
+       x2="462.47"
+       y2="92.080002"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       id="Gradiente_sem_nome_13-7"
+       x1="385.22"
+       y1="44.75"
+       x2="385.22"
+       y2="92.080002"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       id="Gradiente_sem_nome_13-9"
+       x1="360.56"
+       y1="67.150002"
+       x2="360.56"
+       y2="78.209999"
+       xlink:href="#Gradiente_sem_nome_13" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Gradiente_sem_nome_13"
+       id="linearGradient889"
+       gradientUnits="userSpaceOnUse"
+       x1="98.209999"
+       y1="36.959999"
+       x2="98.209999"
+       y2="73.059998" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Gradiente_sem_nome_13"
+       id="linearGradient891"
+       x1="385.22"
+       y1="44.75"
+       x2="385.22"
+       y2="92.080002" />
+  </defs>
+  <title
+     id="title859">Ativo 15</title>
+  <g
+     id="Camada_2"
+     data-name="Camada 2"
+     transform="matrix(0.41584569,0,0,0.41584569,4.1884255e-4,-0.00142841)">
+    <g
+       id="Camada_1-2"
+       data-name="Camada 1">
+      <path
+         class="cls-1"
+         d="m 88.67,8.52 q -8.52,8 -8.51,23.68 V 73.35 H 99.81 V 32.2 q 0,-6.36 3.93,-9.64 3.93,-3.28 12.52,-3.28 V 0.57 q -19.17,0.08 -27.59,8"
+         id="path861"
+         style="fill:url(#linearGradient889)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-2"
+         d="m 147.22,20.8 a 19.05,19.05 0 0 1 19.51,0.2 l -29,16.85 a 19,19 0 0 1 9.47,-17 M 138.07,5.06 a 37.27,37.27 0 1 0 52.78,47.38 l -15.92,-9.29 a 19.05,19.05 0 0 1 -28.07,10.38 l 32.68,-19 v 0 l 13.07,-7.6 A 37.26,37.26 0 0 0 138.07,5.06"
+         id="path863"
+         style="fill:url(#Gradiente_sem_nome_13-2)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-3"
+         d="m 209.34,8.71 q -9.92,8.15 -9.92,22.74 v 41.9 h 19.66 v -41.9 a 10.61,10.61 0 0 1 4.21,-9 15.85,15.85 0 0 1 9.83,-3.18 15.66,15.66 0 0 1 10,3.18 10.82,10.82 0 0 1 4,9 v 41.9 h 19.66 v -41.9 q 0,-14.6 -9.92,-22.74 -9.92,-8.14 -23.74,-8.14 -13.86,0 -23.78,8.14"
+         id="path865"
+         style="fill:url(#Gradiente_sem_nome_13-3)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-4"
+         d="m 290.33,37.14 a 19.22,19.22 0 1 1 19.22,19.22 19.22,19.22 0 0 1 -19.22,-19.22 m -17,0.28 c 0.15,20 16.7,35.93 36.66,35.93 h 0.74 c 4.06,-0.23 10.51,-1.26 15.29,-5.21 v 0.06 a 5.15,5.15 0 0 0 5.15,5.15 h 14.57 V 1.06 h -14.7 a 5,5 0 0 0 -5,5 v 0 C 321.64,2.51 315.85,1.35 311.78,1 311,1 310.3,0.93 309.55,0.93 a 36.21,36.21 0 0 0 -36.21,36.49"
+         id="path867"
+         style="fill:url(#Gradiente_sem_nome_13-4)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-5"
+         d="M 0,37.4 23.23,23.1 a 19.09,19.09 0 0 1 31.55,18.33 19.43,19.43 0 0 0 0.66,10.68 l 1.7,5 a 0.8,0.8 0 0 1 -1,1 l -5,-1.7 A 19.84,19.84 0 0 0 40.37,55.77 19.09,19.09 0 0 1 23.23,23.1 L 0,37.4 c 0.15,20 16.69,35.91 36.64,35.91 h 0.74 c 4.06,-0.23 10.5,-1.26 15.28,-5.2 v 0 a 5.15,5.15 0 0 0 5.15,5.15 H 72.37 V 1.06 H 57.68 a 5,5 0 0 0 -5,5 V 6.12 C 48.27,2.52 42.48,1.35 38.42,1 37.68,1 36.94,0.94 36.18,0.94 A 36.19,36.19 0 0 0 0,37.4"
+         id="path869"
+         style="fill:url(#Gradiente_sem_nome_13-5)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-6"
+         d="m 49.72,23.6 a 22.34,22.34 0 0 1 3.55,5 20.33,20.33 0 0 1 1.73,5.21 20.11,20.11 0 0 1 0.27,4.33 18.14,18.14 0 0 1 -0.43,3.08 18.31,18.31 0 0 0 -0.47,5.28 22.42,22.42 0 0 0 0.77,4.63 c 0.33,1.07 0.62,1.88 0.83,2.49 l 0.56,1.59 c 0.07,0.24 0.64,1.86 0.66,2 a 0.83,0.83 0 0 1 0,0.34 0.76,0.76 0 0 1 -0.36,0.47 0.82,0.82 0 0 1 -0.42,0.11 0.57,0.57 0 0 1 -0.22,0 L 55.94,58 55.54,57.87 c -0.5,-0.19 -1.14,-0.4 -1.65,-0.57 -1.38,-0.47 -2.87,-1 -3.14,-1.08 A 19.09,19.09 0 0 0 44.38,55.28 H 44 a 20,20 0 0 0 -3.62,0.44 21.11,21.11 0 0 1 -4.72,0.49 19.4,19.4 0 0 1 -11.94,-4.59 l 20.54,20.6 a 22.27,22.27 0 0 0 8.42,-4.13 v 0 a 5.15,5.15 0 0 0 5.15,5.15 h 14.59 v -27 z"
+         id="path871"
+         style="fill:url(#Gradiente_sem_nome_37)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-7"
+         d="M 508.77,10.33 Q 499.11,2.4 485.62,2.4 q -13.49,0 -23.14,7.93 v 0 Q 452.8,2.39 439.32,2.4 q -13.48,0.01 -23.15,7.93 -9.66,7.92 -9.66,22.14 v 40.79 h 19.14 V 32.47 a 10.35,10.35 0 0 1 4.1,-8.75 15.45,15.45 0 0 1 9.57,-3.09 15.29,15.29 0 0 1 9.75,3.09 10.17,10.17 0 0 1 3.82,7.15 c 0,0.54 -0.07,1.05 -0.07,1.6 v 40.79 h 19.3 V 32.47 c 0,-0.54 -0.05,-1 -0.07,-1.57 a 10,10 0 0 1 4,-7.18 15.44,15.44 0 0 1 9.56,-3.09 15.25,15.25 0 0 1 9.75,3.09 10.54,10.54 0 0 1 3.92,8.75 v 40.79 h 19.13 V 32.47 q 0.01,-14.22 -9.64,-22.14 z"
+         id="path873"
+         style="fill:url(#Gradiente_sem_nome_13-6)"
+         inkscape:connector-curvature="0" />
+      <path
+         class="cls-8"
+         d="m 385.22,24.93 c -5,0 -5.74,-2.39 -7.81,-3.73 a 1.13,1.13 0 0 0 -1.73,1 v 50.44 a 0.62,0.62 0 0 0 0.62,0.62 h 17.84 a 0.62,0.62 0 0 0 0.62,-0.62 V 22.11 a 1.13,1.13 0 0 0 -1.74,-0.95 c -2.25,1.36 -1.97,3.77 -7.8,3.77 z"
+         id="path875"
+         style="fill:url(#linearGradient891)"
+         inkscape:connector-curvature="0" />
+      <circle
+         class="cls-8"
+         cx="385.22"
+         cy="10.99"
+         r="9.54"
+         id="circle877"
+         style="fill:url(#Gradiente_sem_nome_13-7)" />
+      <circle
+         class="cls-9"
+         cx="360.56"
+         cy="67.150002"
+         r="5.5300002"
+         id="circle879"
+         style="fill:url(#Gradiente_sem_nome_13-9)" />
+    </g>
+  </g>
+</svg>
