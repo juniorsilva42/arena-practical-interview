@@ -1,19 +1,19 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-const webpackCommonConfig = require('./webpack.common.js');
+const webpackCommonConfig = require('./webpack.common');
 
 module.exports = merge(webpackCommonConfig, {
 	output: {
-		publicPath: '/dist/',
+		publicPath: '/',
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
-	],
-	devtool: "source-map",
+  ],
+  devtool: "source-map",
 	devServer: {
-		hot: true,
+    hot: true,
+    contentBase: './public'
 	}
 });
 

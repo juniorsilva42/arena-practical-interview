@@ -1,14 +1,11 @@
-const path = require('path');
-
-const outputPath = path.join(__dirname, 'dist');
 const port = process.env.PORT || 3000;
 
 module.exports = {
-  context: __dirname,
-  entry: './src/App.js',
+  entry: './src/index.js',
   output: {
-		path: path.join(__dirname, 'dist'),
-		filename: 'bundle.js',
+    path: __dirname + '/public',
+    filename: 'bundle.js',
+    chunkFilename: '[name].chunk.js',
   },
   resolve: {
 		modules: ['node_modules', './src'],
@@ -25,7 +22,5 @@ module.exports = {
   },
   devServer: {
     port,
-    publicPath: './dist',
-    hot: true
   }  
 };
