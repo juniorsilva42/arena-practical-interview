@@ -13,7 +13,7 @@ module.exports = merge(webpackCommonConfig, {
   devtool: "source-map",
 	devServer: {
     hot: true,
-    contentBase: './public'
+    contentBase: './public',
 	}
 });
 

@@ -1,14 +1,14 @@
 const port = process.env.PORT || 3000;
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: __dirname + '/public',
     filename: 'bundle.js',
     chunkFilename: '[name].chunk.js',
   },
   resolve: {
-		modules: ['node_modules', './src'],
+	  modules: ['node_modules', './src'],
 		extensions: ['.js', '.jsx'],
   },
 	module: {
@@ -16,11 +16,11 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				loader: 'babel-loader',
-				exclude: /node_modules/
-			}
-		]
+				exclude: /node_modules/,
+			},
+		],
   },
   devServer: {
     port,
-  }  
+  }
 };

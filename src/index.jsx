@@ -11,8 +11,8 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>, 
-  document.getElementById('app')
+  </Provider>,
+  document.getElementById('app'),
 );
 
 serviceWorker.register();

@@ -34,10 +34,10 @@ const Icon = (props) => {
   const opts = { ...props };
   delete opts.vendor;
 
-  opts.className = `${ ( opts.className || '' ) } arena-icon`;
+  opts.className = `${(opts.className || '')} arena-icon`;
 
   // Feather.
-  if ('feather' === vendor) {
+  if (vendor === 'feather') {
     name = pascalCase(name);
 
     if (!FeatherIcons[name]) {
@@ -46,11 +46,11 @@ const Icon = (props) => {
 
     const RenderIcon = FeatherIcons[name];
 
-    result = <RenderIcon { ...opts } strokeWidth="1.5" />;
+    result = <RenderIcon {...opts} strokeWidth="1.5" />;
   }
 
   // FontAwesome.
-  if ('fa' === vendor) {
+  if (vendor === 'fa') {
     let icon = '';
     let lib = 'far';
 
