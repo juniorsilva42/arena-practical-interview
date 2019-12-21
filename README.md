@@ -1,48 +1,83 @@
-# Desenvolver uma página web para consulta a API do [GitHub](https://github.com)
 
-Criar um aplicativo Web para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Javascript. Basear-se no mockup fornecido:
+## Arena - Frontend Practical Interview  :zap:
+> A small interface project to query and get the most popular JS repositories on github.
+--------------------
 
-![Captura de tela de 2015-10-22 11-28-03.png](https://bitbucket.org/repo/7ndaaA/images/3102804929-Captura%20de%20tela%20de%202015-10-22%2011-28-03.png)
+Candidate: Ivanicio Junior   
+E-mail: jsiilva@outlook.com.br   
+Phone: +55 89 994112266  
+[Linkedin](https://www.linkedin.com/in/jsilva49/) - [Github](https://github.com/jsiilva1/)
 
-### **Deve conter** ###
+--------------------
+  
+## Table of Contents
+- [Overview](#overview)
+- [Technology](#technology)
+- [Quick Start](#quick-start)
+- [CLI Brief](#cli-brief)
+- [Programming Standards - Airbnb Style Guides](#programming-standards---airbnb-style-guides)
+  - [The Rules](#the-rules)
+  
+## Overview
+#### Tech and running app:
+- written using ES6;
+- uses Yarn for package dependency management;
+- uses [Airbnb Standard Style](https://github.com/airbnb/javascript)
+- Developed on Linux Ubuntu 19.10 Budgie Distro Platform
+## Technology
+Here's a brief overview of technology stack:
+-  **[React](https://reactjs.org/)** - as lib to create UI
+-  **[Redux](https://www.npmjs.com/package/redux)** - as a predictable state container
+-  **[Redux-thunk](https://www.npmjs.com/package/redux-thunk)** - as a tool async calls of redux actions
+-  **[Styled-components](https://www.npmjs.com/package/styled-components)** - as a tool to styling screens with pure js.
+ - **[Axios](https://www.npmjs.com/package/axios)** - Promise based HTTP client
+ - **[Webpack](https://https://webpack.js.org/)** - To handle with bootstrap app
+ - **[Jest](https://https://webpack.js.org/)** - To handle with app tests
+ 
+A brief overview of the project file structure
+```
+├── public
+├── config
+├── src
+   ├── store 
+   ├── __tests__ 
+   ├── shared 
+     ├── components
+     ├── utils
+     ├── theme
+   ├── containers
+```
 
-- __Lista de repositórios__. Exemplo de chamada na API: `https://api.github.com/search/repositories?q=language:Javascript&sort=stars&page=1`
-  * Paginação na tela de lista, com endless scroll / scroll infinito (incrementando o parâmetro `page`).
-  * Cada repositório deve exibir Nome do repositório, Descrição do Repositório, Nome / Foto do autor, Número de Stars, Número de Forks
-  * Ao clicar em um item, deve levar a lista de Pull Requests do repositório
-- __Pull Requests de um repositório__. Exemplo de chamada na API: `https://api.github.com/repos/<criador>/<repositório>/pulls`
-  * Cada item da lista deve exibir Nome / Foto do autor do PR, Título do PR, Data do PR e Body do PR
-  * Ao clicar em um item, deve abrir no browser a página do Pull Request em questão
+## Quick Start
+1. Pull the repo branch
+2. Install the dependencies with `yarn or npm install`
+3. Run the application in development mode with `yarn start`
+4. Access `http://localhost:3000/`
 
-### **O projeto DEVE ** ##
-* Conter sistema de build com melhores práticas de performance
-* Ser implementada em React/Redux
-* Ser responsiva (mobile-first)
-* Conter testes unitários
-* Utilizar styled components
+## CLI Brief
+- `yarn dev` - start the app locally/development 
+- `yarn test` - run tests
+- `yarn lint` - lint codebase using Airbnb Standard Style
+- `yarn lint:fix` - fix code according to ESlint Airbnb Style guide
 
-### **Ganha + pontos se conter** ###
+## Programming Standards - Airbnb Style Guides
+### The Rules
 
-* Testes funcionais (que naveguem pelo aplicativo como casos de uso)
+- **2 spaces** – for indentation
+- **Single quotes for strings** – except to avoid escaping
+- **No unused variables** – this one catches *tons* of bugs!
+- **No semicolons** – [It's][1] [fine.][2] [Really!][3]
+- **Never start a line with `(`, `[`, or `` ` ``**
+  - This is the **only** gotcha with omitting semicolons – *automatically checked for you!*
+  - [More details][4]
+- **Space after keywords** `if (condition) { ... }`
+- **Space after function name** `function name (arg) { ... }`
+- Always use `===` instead of `==` – but `obj == null` is allowed to check `null || undefined`.
+- Always handle the node.js `err` function parameter
+- Always prefix browser globals with `window` – except `document` and `navigator` are okay
+  - Prevents accidental use of poorly-named browser globals like `open`, `length`,
+    `event`, and `name`.
 
-### **OBS** ###
+---
 
-A foto do mockup é meramente ilustrativa.  
-
-
-### **Processo de submissão** ###
-
-O candidato deverá implementar a solução e enviar um pull request para este repositório com a solução.
-
-O processo de Pull Request funciona da seguinte maneira:
-
-1. Candidato fará um fork desse repositório (não irá clonar direto!)
-2. Fará seu projeto nesse fork.
-3. Commitará e subirá as alterações para o __SEU__ fork.
-4. Pela interface do GitHub, irá enviar um Pull Request.
-
-Se possível deixar o fork público para facilitar a inspeção do código.
-
-### **ATENÇÃO** ###
-
-Não se deve tentar fazer o PUSH diretamente para ESTE repositório!
+Made by Ivanicio Jr 
