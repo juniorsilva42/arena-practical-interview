@@ -13,7 +13,7 @@ export const Types = {
 /*
  * Initial State
  * */
-const initialState = {
+export const initialState = {
   data: [],
   isLoading: false,
 };

@@ -9,7 +9,7 @@ const App = () => {
   /*
    * Redux store
   */
-  const { repos, pullRequests } = useSelector(state => state);
+  const pullRequests = useSelector(state => state);
   const dispatcher = useDispatch();
 
   /*
