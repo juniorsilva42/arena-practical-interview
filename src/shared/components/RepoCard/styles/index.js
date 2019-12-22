@@ -12,6 +12,7 @@ export const CardItem = styled.div`
   background: #FFF;
   width: calc(80vh - 21%);
   min-width: 250px;
+  min-height: 230px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 4px;
   border: 1px solid #ecf0f1;
   border-radius: 7px;
@@ -22,7 +23,11 @@ export const CardItem = styled.div`
 
   &:hover { opacity: 0.7; }
   
-  @media ${device.tablet}, ${device.mobile} {
+  @media ${device.tablet} {
+    height: 50vh;
+  }
+
+  @media ${device.tablet}, ${device.mobile}, ${device.laptop} {
     .list-title {
       font-size: 1.5rem;
     }
@@ -31,7 +36,7 @@ export const CardItem = styled.div`
   @media ${device.mobile} {
     width: 100%;
     margin: 0px 0 10px 0;
-    
+   
     &:last-child {
       margin-bottom: 26%;
     }
@@ -77,8 +82,14 @@ export const User = styled.span`
   width: 100%; 
   border-top: 1px solid #ecf0f1;
   float: left;
-  margin: 20px 0 10px 0;
+  margin: 30px 0 10px 0;
   padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+
+  @media ${device.mobile} {
+    position: none;
+  }
 `;
 
 export const UserPhoto = styled.span` 
