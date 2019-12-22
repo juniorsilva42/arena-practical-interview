@@ -15,7 +15,7 @@ export const CardItem = styled.div`
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 4px;
   border: 1px solid #ecf0f1;
   border-radius: 7px;
-  margin: 0px 7px 7px 0;
+  margin: 0px 12px 12px 0;
   transition: 0.8s;
   cursor: pointer;
   position: relative;
