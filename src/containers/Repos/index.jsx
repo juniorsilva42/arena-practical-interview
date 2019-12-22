@@ -1,7 +1,7 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 /**
@@ -51,12 +51,50 @@ const Repos = () => {
     // dispatchAndGetPullRequests({ creator: 'stationfy', repo: 'desafio-web' })} 
   };
 
+  useEffect(() => {
+    dispatchAndGetRepos({ page: 1 });
+  }, []);
+
+  const mountRepoCards = (reposList) => {
+    const { data } = reposList;
+
+    const { items } = data;
+
+    if (items) {
+      return items.map((repoItem) => {
+        const {
+          id,
+          name,
+          full_name: fullname,
+          forks_count,
+          stargazers_count,
+          owner,
+          description,
+        } = repoItem;
+
+        const { avatar_url, login: username, type } = owner;
+
+        return (
+          <RepoCard
+            key={id}
+            title={name}
+            description={description}
+            starsNumber={stargazers_count}
+            forksNumber={forks_count}
+            user={{ username, type, avatar_url }}
+          />
+        );
+      });
+    }
+  };
+
   return (
     <>
       <PageTitle text="Javascript trending repos" />
 
       <CardWrapper>
-        <RepoCard title="bitcoin" description="Bitcoin Core integration/staging tree" />
+        {repos.isLoading && 'Loading...'}
+        {mountRepoCards(repos)}
       </CardWrapper>
     </>
   );

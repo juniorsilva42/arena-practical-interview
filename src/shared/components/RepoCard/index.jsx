@@ -21,7 +21,16 @@ const RepoCard = (props) => {
   const {
     title,
     description,
+    forksNumber,
+    starsNumber,
+    user,
   } = props;
+
+  const {
+    username,
+    type,
+    avatar_url, 
+  } = user;
 
   return (
     <CardItem title="View repo details">
@@ -30,23 +39,25 @@ const RepoCard = (props) => {
         <h2 className="description">{description}</h2>
 
         <Stats>
-          <StatItem title="14 forks">
+          <StatItem title={`${forksNumber} forks`}>
             <Icon name={['fas', 'code-branch']} vendor="fa" />
-            <span className="number-stat">14</span>
+            <span className="number-stat">{forksNumber}</span>
           </StatItem>
 
-          <StatItem title="1.5k stars">
+          <StatItem title={`${starsNumber} stars`}>
             <Icon name={['fas', 'star']} vendor="fa" />
-            <span className="number-stat">1.5k</span>
+            <span className="number-stat">{starsNumber}</span>
           </StatItem>
         </Stats>
 
         <User>
-          <UserPhoto />
+          <UserPhoto>
+            <img src={avatar_url} alt="" />
+          </UserPhoto>
 
           <UserInfo>
-            <p className="user-fullname">Junior Silva</p>
-            <p className="user-username">jsiilva1</p>
+            <p className="user-fullname">{username}</p>
+            <p className="user-username">{type}</p>
           </UserInfo>
         </User>
 

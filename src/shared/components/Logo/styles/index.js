@@ -28,9 +28,10 @@ export const LogoContainer = styled.div`
   @media ${device.mobile} {
     float: left;
     margin: 0 10px;
+
     p { 
-      font-size: 0.96rem; 
-      margin-top: 7px;
+      font-size: 0.8rem; 
+      margin-top: 5px;
     }
   }
 `;

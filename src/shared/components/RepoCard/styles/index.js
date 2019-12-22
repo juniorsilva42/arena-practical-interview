@@ -18,6 +18,7 @@ export const CardItem = styled.div`
   margin: 0px 7px 7px 0;
   transition: 0.8s;
   cursor: pointer;
+  position: relative;
 
   &:hover { opacity: 0.7; }
   
@@ -30,6 +31,7 @@ export const CardItem = styled.div`
   @media ${device.mobile} {
     width: 100%;
     margin: 0px 0 10px 0;
+    
     &:last-child {
       margin-bottom: 26%;
     }
@@ -66,6 +68,8 @@ export const StatItem = styled.span`
   & .number-stat {
     margin-left: 3px;
   }
+
+  cursor: default;
 `;
 
 export const User = styled.span`
@@ -77,10 +81,11 @@ export const User = styled.span`
 `;
 
 export const UserPhoto = styled.span` 
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #B8B8B8;
+  & img { 
+    width: 30px; 
+    height: 30px; 
+  }
+
   float: left;
 `;
 
