@@ -1,7 +1,8 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 /**
  * Internal Dependencies
@@ -25,6 +26,7 @@ const RepoCard = (props) => {
     forksNumber,
     starsNumber,
     user,
+    link,
   } = props;
 
   const {
@@ -33,37 +35,45 @@ const RepoCard = (props) => {
     avatar_url,
   } = user;
 
+  const [redirect, setIsRedirect] = useState({});
+
+  const goToPullsPage = (linkPath) => setIsRedirect({ redirecting: true, link: linkPath });
+
   return (
-    <CardItem title="View repo details">
-      <CardBody>
-        <h1 className="list-title">{title}</h1>
-        <h2 className="description">{breakWords({ text: description, toCharLimit: 85 })}</h2>
+    <>
+      {redirect.redirecting && <Redirect to={redirect.link} />}
 
-        <Stats>
-          <StatItem title={`${forksNumber} forks`}>
-            <Icon name={['fas', 'code-branch']} vendor="fa" />
-            <span className="number-stat">{formatNumber(forksNumber)}</span>
-          </StatItem>
+      <CardItem title="View repo details" onClick={() => goToPullsPage(link)}>
+        <CardBody>
+          <h1 className="list-title">{title}</h1>
+          <h2 className="description">{breakWords({ text: description, toCharLimit: 85 })}</h2>
 
-          <StatItem title={`${starsNumber} stars`}>
-            <Icon name={['fas', 'star']} vendor="fa" />
-            <span className="number-stat">{formatNumber(starsNumber)}</span>
-          </StatItem>
-        </Stats>
+          <Stats>
+            <StatItem title={`${forksNumber} forks`}>
+              <Icon name={['fas', 'code-branch']} vendor="fa" />
+              <span className="number-stat">{formatNumber(forksNumber)}</span>
+            </StatItem>
 
-        <User>
-          <UserPhoto>
-            <img src={avatar_url} alt={username} />
-          </UserPhoto>
+            <StatItem title={`${starsNumber} stars`}>
+              <Icon name={['fas', 'star']} vendor="fa" />
+              <span className="number-stat">{formatNumber(starsNumber)}</span>
+            </StatItem>
+          </Stats>
 
-          <UserInfo>
-            <p className="user-fullname">{username}</p>
-            <p className="user-username">{type}</p>
-          </UserInfo>
-        </User>
+          <User>
+            <UserPhoto>
+              <img src={avatar_url} alt={username} />
+            </UserPhoto>
 
-      </CardBody>
-    </CardItem>
+            <UserInfo>
+              <p className="user-fullname">{username}</p>
+              <p className="user-username">{type}</p>
+            </UserInfo>
+          </User>
+
+        </CardBody>
+      </CardItem>
+    </>
   );
 };
 

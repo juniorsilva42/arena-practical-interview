@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { device } from '../../../theme/settings/screens';
+import { device } from '../../../../../theme/settings/screens';
 
 export const Container = styled.section`
   width: 90%;

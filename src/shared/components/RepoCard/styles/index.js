@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { device } from '../../../theme/settings/screens';
+import { device } from '../../../../../theme/settings/screens';
 
 export const CardWrapper = styled.div`
   display: flex;

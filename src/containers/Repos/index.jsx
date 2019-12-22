@@ -66,6 +66,7 @@ const Repos = () => {
             starsNumber={stargazers_count}
             forksNumber={forks_count}
             user={{ username, type, avatar_url }}
+            link={`/pulls/${username}/${name}`}
           />
         );
       });

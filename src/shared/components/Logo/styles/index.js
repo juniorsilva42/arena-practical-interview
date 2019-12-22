@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import logoSrc from '../../../../../public/assets/images/logo-arena.svg';
 
-import { device } from '../../../theme/settings/screens';
+import { device } from '../../../../../theme/settings/screens';
 
 export const LogoContainer = styled.div`
   width: 100vw;

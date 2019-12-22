@@ -2,11 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
+import toJson from 'enzyme-to-json';
 
 import App from '../../../App';
 
 const mockStore = configureMockStore();
-const store = mockStore({});
+const store = mockStore({ data: [], isLoading: false });
 
 describe('App', () => {
   it('should render the App Component correctly', () => {
@@ -16,6 +17,6 @@ describe('App', () => {
       </Provider>
     );
     
-    expect(wrapper).toMatchSnapshot();
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

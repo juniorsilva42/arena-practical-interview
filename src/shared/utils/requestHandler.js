@@ -69,6 +69,6 @@ export const doRequest = (
       .then(parseRequest);
 
   } catch (err) {
-    console.log(err);
+    throw new Error(err);
   }
 };

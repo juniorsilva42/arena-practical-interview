@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
 
-import LatoLight from '../../../../public/assets/fonts/Lato-Light.ttf';
-import LatoRegular from '../../../../public/assets/fonts/Lato-Regular.ttf';
-import LatoBlack from '../../../../public/assets/fonts/Lato-Black.ttf';
+import LatoLight from '../../public/assets/fonts/Lato-Light.ttf';
+import LatoRegular from '../../public/assets/fonts/Lato-Regular.ttf';
+import LatoBlack from '../../public/assets/fonts/Lato-Black.ttf';
 
 export const LoadFonts = css`
   @font-face {
