@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContainer Component should render a Page Container with content as children correctly 1`] = `
+<Fragment>
+  <div
+    className="arena-fixed-container"
+  >
+    <styled.section>
+      <div>
+        <p>
+          Real-time content platform
+        </p>
+      </div>
+    </styled.section>
+  </div>
+</Fragment>
+`;

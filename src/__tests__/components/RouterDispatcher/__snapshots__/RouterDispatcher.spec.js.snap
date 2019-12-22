@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RouterDispatcher Component should render the switch router correctly 1`] = `
+<Fragment>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/pulls/:creator/:repo"
+    />
+  </Switch>
+</Fragment>
+`;

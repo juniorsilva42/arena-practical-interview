@@ -9,6 +9,6 @@ export const Heading = styled.div`
     margin: 0 auto;
     
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;

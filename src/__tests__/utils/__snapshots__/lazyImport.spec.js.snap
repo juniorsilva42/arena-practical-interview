@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lazy Import Helper Util should mount the requested component chunk 1`] = `
+<LoadingComponent
+  error={null}
+  isLoading={true}
+  pastDelay={false}
+  retry={[Function]}
+  timedOut={false}
+/>
+`;
+
+exports[`Lazy Import Helper Util should return a wrapper of loading component of the requested component chunk 1`] = `
+<LoadingComponent
+  error={null}
+  isLoading={true}
+  pastDelay={false}
+  retry={[Function]}
+  timedOut={false}
+/>
+`;

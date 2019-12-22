@@ -3,13 +3,13 @@
  */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import InfiniteScroll from 'react-infinite-scroller';
 
 /**
  * Internal Dependencies
  */
 import { CardWrapper } from '../../shared/components/RepoCard/styles';
 import { getRepos } from '../../store/ducks/repos';
-import { getPullRequests } from '../../store/ducks/pullRequests';
 import RepoCard from '../../shared/components/RepoCard';
 import PageTitle from '../../shared/components/PageTitle';
 
@@ -74,11 +74,11 @@ const Repos = () => {
 
   return (
     <>
-      <PageTitle text="Javascript trending repos" />
+      <PageTitle text="Github Javascript Popular Repos" />
+
+      {repos.isLoading && 'Loading...'}
 
       <CardWrapper>
-        {repos.isLoading && 'Loading...'}
-
         {mountRepoCards(repos)}
       </CardWrapper>
     </>
