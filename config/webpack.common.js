@@ -34,6 +34,7 @@ module.exports = {
   },
   devServer: {
     port,
+    historyApiFallback: true,
   },
   optimization: {
     splitChunks: {
