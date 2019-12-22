@@ -16,7 +16,7 @@ export default (() => {
     <>
       <Switch>
         <Route exact path="/" component={ReposPage} />
-        <Route path="/pulls/:creator/:repo" component={PullRequestsPage} />
+        <Route exact path="/pulls/:creator/:repo" component={PullRequestsPage} />
       </Switch>
     </>
   );

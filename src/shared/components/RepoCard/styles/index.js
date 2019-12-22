@@ -12,7 +12,7 @@ export const CardItem = styled.div`
   background: #FFF;
   width: calc(80vh - 21%);
   min-width: 250px;
-  min-height: 230px;
+  min-height: 35vh;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 4px;
   border: 1px solid #ecf0f1;
   border-radius: 7px;

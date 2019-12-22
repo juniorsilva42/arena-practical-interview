@@ -3,7 +3,6 @@
  */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import InfiniteScroll from 'react-infinite-scroller';
 
 /**
  * Internal Dependencies
@@ -12,6 +11,7 @@ import { CardWrapper } from '../../shared/components/RepoCard/styles';
 import { getRepos } from '../../store/ducks/repos';
 import RepoCard from '../../shared/components/RepoCard';
 import PageTitle from '../../shared/components/PageTitle';
+import Alert from '../../shared/components/Alert';
 
 const Repos = () => {
   /*
@@ -27,8 +27,8 @@ const Repos = () => {
     dispatcher(
       getRepos({
         data: {
-          query: 'language:Javascript',
-          sortBy: 'stars',
+          query: 'language:aa',
+          sortBy: 'aa',
           page,
         },
       }),
@@ -40,7 +40,11 @@ const Repos = () => {
   }, []);
 
   const mountRepoCards = (reposList) => {
-    const { data } = reposList;
+    const { data, error } = reposList;
+
+    if (error) {
+      return <Alert type="error" message="There was an error trying to get the repositories. Try again later." />;
+    }
 
     const { items } = data;
 
