@@ -44,12 +44,13 @@ export const CardItem = styled.div`
     font-size: 1.4rem;
   }
   
-  & .description   {
+  & .description {
     margin: 5px 0;
     font-size: 0.98rem;
     font-weight: 500;
     font-style: normal;
     color: #B8B8B8;
+    max-height: 100px;
   }
 `;
 

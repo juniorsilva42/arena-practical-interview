@@ -6,6 +6,7 @@ import React from 'react';
 /**
  * Internal Dependencies
  */
+import { breakWords } from '../../utils/helpers';
 import {
   CardItem,
   CardBody,
@@ -36,7 +37,7 @@ const RepoCard = (props) => {
     <CardItem title="View repo details">
       <CardBody>
         <h1 className="list-title">{title}</h1>
-        <h2 className="description">{description}</h2>
+        <h2 className="description">{breakWords({ text: description, toCharLimit: 85 })}</h2>
 
         <Stats>
           <StatItem title={`${forksNumber} forks`}>
