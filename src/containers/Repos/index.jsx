@@ -11,6 +11,7 @@ import { CardWrapper } from '../../shared/components/RepoCard/styles';
 import { getRepos } from '../../store/ducks/repos';
 import { getPullRequests } from '../../store/ducks/pullRequests';
 import RepoCard from '../../shared/components/RepoCard';
+import PageTitle from '../../shared/components/PageTitle';
 
 const Repos = () => {
   /*
@@ -52,6 +53,8 @@ const Repos = () => {
 
   return (
     <>
+      <PageTitle text="Javascript trending repos" />
+
       <CardWrapper>
         <RepoCard title="bitcoin" description="Bitcoin Core integration/staging tree" />
       </CardWrapper>

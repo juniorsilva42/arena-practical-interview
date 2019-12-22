@@ -12,7 +12,6 @@ export const CardItem = styled.div`
   background: #FFF;
   width: calc(80vh - 21%);
   min-width: 250px;
-  min-height: calc(65vh - 280px); 
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 4px;
   border: 1px solid #ecf0f1;
   border-radius: 7px;
@@ -30,7 +29,6 @@ export const CardItem = styled.div`
 
   @media ${device.mobile} {
     width: 100%;
-    min-height: calc(80vh - 280px); 
     margin: 0px 0 10px 0;
     &:last-child {
       margin-bottom: 26%;

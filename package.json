@@ -4,7 +4,7 @@
   "description": "Practical Interview for Pleno Frontend Engineer job at Arena",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js --mode development",
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js --mode development --host 0.0.0.0",
     "build": "./node_modules/.bin/webpack --config ./config/webpack.dev.js",
     "build:production": "./node_modules/.bin/webpack --config ./config/webpack.prod.js",
     "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.prod.js",
