@@ -12,7 +12,8 @@ module.exports = merge(webpackCommonConfig, {
   ],
 	devServer: {
     hot: true,
-    contentBase: './public',
+		contentBase: './public',
+		historyApiFallback: true,
 	},
   optimization: {
     splitChunks: {
