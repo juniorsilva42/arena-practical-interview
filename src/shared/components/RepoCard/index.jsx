@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * Internal Dependencies
  */
-import { breakWords } from '../../utils/helpers';
+import { breakWords, formatNumber } from '../../utils/helpers';
 import {
   CardItem,
   CardBody,
@@ -42,12 +42,12 @@ const RepoCard = (props) => {
         <Stats>
           <StatItem title={`${forksNumber} forks`}>
             <Icon name={['fas', 'code-branch']} vendor="fa" />
-            <span className="number-stat">{forksNumber}</span>
+            <span className="number-stat">{formatNumber(forksNumber)}</span>
           </StatItem>
 
           <StatItem title={`${starsNumber} stars`}>
             <Icon name={['fas', 'star']} vendor="fa" />
-            <span className="number-stat">{starsNumber}</span>
+            <span className="number-stat">{formatNumber(starsNumber)}</span>
           </StatItem>
         </Stats>
 
