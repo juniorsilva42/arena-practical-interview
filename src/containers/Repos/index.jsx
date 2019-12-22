@@ -35,22 +35,6 @@ const Repos = () => {
     );
   };
 
-  /*
-  * Dispatch action to pull request a given user and repo
-  */
-  const dispatchAndGetPullRequests = ({ creator, repo }) => {
-    dispatcher(
-      getPullRequests({
-        data: {
-          creator,
-          repo,
-        },
-      }),
-    );
-
-    // dispatchAndGetPullRequests({ creator: 'stationfy', repo: 'desafio-web' })} 
-  };
-
   useEffect(() => {
     dispatchAndGetRepos({ page: 1 });
   }, []);
@@ -94,6 +78,7 @@ const Repos = () => {
 
       <CardWrapper>
         {repos.isLoading && 'Loading...'}
+
         {mountRepoCards(repos)}
       </CardWrapper>
     </>

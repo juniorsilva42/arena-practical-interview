@@ -29,7 +29,7 @@ const RepoCard = (props) => {
   const {
     username,
     type,
-    avatar_url, 
+    avatar_url,
   } = user;
 
   return (
@@ -52,7 +52,7 @@ const RepoCard = (props) => {
 
         <User>
           <UserPhoto>
-            <img src={avatar_url} alt="" />
+            <img src={avatar_url} alt={username} />
           </UserPhoto>
 
           <UserInfo>

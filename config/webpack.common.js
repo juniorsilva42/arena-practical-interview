@@ -6,6 +6,7 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'app-bundle.js',
     chunkFilename: '[name].js',
+    publicPath: '/',
   },
   resolve: {
 	  modules: ['node_modules', './src'],
