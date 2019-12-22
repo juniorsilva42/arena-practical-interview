@@ -61,7 +61,44 @@ export const getRepos = ({ data }) => (dispatch) => {
       dispatch({
         type: Types.REPOS_FETCHED,
         payload: {
-          data: response.data,
+          data: response.data.items,
+        },
+      });
+    })
+    .catch((error) => {
+      dispatch({
+        type: Types.REPOS_FAILED,
+        payload: error,
+        error: true,
+      });
+    });
+};
+
+export const loadMore = ({ data }) => (dispatch, getState) => {
+  dispatch({ type: Types.REPOS_REQUESTED });
+
+  const { query, sortBy, page } = data;
+
+  // Do request on Github API
+  doRequest({
+    method: 'GET',
+    endpoint: 'search/repositories',
+    params: {
+      q: query,
+      sort: sortBy,
+      page,
+    },
+  })
+    .then((response) => {
+      const { data: oldData } = getState().repos;
+      
+      dispatch({
+        type: Types.REPOS_FETCHED,
+        payload: {
+          data: [
+            ...oldData,
+            ...response.data.items,
+          ],
         },
       });
     })

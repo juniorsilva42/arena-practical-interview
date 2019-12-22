@@ -1,14 +1,15 @@
 /**
  * External Dependencies
  */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import debounce from 'lodash.debounce';
 
 /**
  * Internal Dependencies
  */
 import { CardWrapper } from '../../shared/components/RepoCard/styles';
-import { getRepos } from '../../store/ducks/repos';
+import { getRepos, loadMore } from '../../store/ducks/repos';
 import RepoCard from '../../shared/components/RepoCard';
 import PageTitle from '../../shared/components/PageTitle';
 import Alert from '../../shared/components/Alert';
@@ -19,6 +20,8 @@ const Repos = () => {
   */
   const { repos } = useSelector((state) => state);
   const dispatcher = useDispatch();
+
+  const [page, setPage] = useState(1);
 
   /*
    * Dispatch action to get all repos
@@ -35,9 +38,38 @@ const Repos = () => {
     );
   };
 
+  const dispatchAndLoadMore = ({ page }) => {
+    dispatcher(
+      loadMore({
+        data: {
+          query: 'language:Javascript',
+          sortBy: 'stars',
+          page,
+        },
+      }),
+    );
+  };
+
   useEffect(() => {
     dispatchAndGetRepos({ page: 1 });
   }, []);
+
+  useEffect(() => {
+    const go = async (p) => {
+      return await dispatchAndLoadMore({ page: p });
+    };
+
+    go(page);
+  }, [page]);
+
+  window.onscroll = debounce(() => {
+    const { innerHeight } = window;
+    const { scrollTop, offsetHeight } = document.documentElement;
+
+    if (innerHeight + scrollTop === offsetHeight) {
+      setPage(page + 1);
+    }
+  }, 1);
 
   const mountRepoCards = (reposList) => {
     const { data, error } = reposList;
@@ -46,10 +78,8 @@ const Repos = () => {
       return <Alert type="error" message="There was an error trying to get the repositories. Try again later." />;
     }
 
-    const { items } = data;
-
-    if (items) {
-      return items.map((repoItem) => {
+    if (data) {
+      return data.map((repoItem) => {
         const {
           id,
           name,
@@ -83,6 +113,7 @@ const Repos = () => {
       <PageTitle text="Github Javascript Popular Repos" />
 
       <CardWrapper>
+        {mountRepoCards(repos)}
         {repos.isLoading ? (
           <>
             <RepoCard isLoading={repos.isLoading} />
@@ -95,8 +126,6 @@ const Repos = () => {
             <RepoCard isLoading={repos.isLoading} />
           </>
         ) : ''}
-
-        {mountRepoCards(repos)}
       </CardWrapper>
     </>
   );
