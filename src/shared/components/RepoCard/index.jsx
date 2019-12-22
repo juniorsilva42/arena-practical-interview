@@ -1,8 +1,10 @@
 /**
  * External Dependencies
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 import { Redirect } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 
 /**
  * Internal Dependencies
@@ -27,13 +29,18 @@ const RepoCard = (props) => {
     starsNumber,
     user,
     link,
+    isLoading,
   } = props;
 
-  const {
-    username,
-    type,
-    avatar_url,
-  } = user;
+  let username;
+  let type;
+  let avatar_url;
+
+  if (user) {
+    username = user.username;
+    type = user.type;
+    avatar_url = user.avatar_url;
+  }
 
   const [redirect, setIsRedirect] = useState({});
 
@@ -45,29 +52,66 @@ const RepoCard = (props) => {
 
       <CardItem title="View repo details" onClick={() => goToPullsPage(link)}>
         <CardBody>
-          <h1 className="list-title">{title}</h1>
-          <h2 className="description">{breakWords({ text: description, toCharLimit: 85 })}</h2>
+          <h1 className="list-title">
+            {isLoading && !title ? (
+              <Skeleton count={1} duration={2} />
+            ) : title}
+          </h1>
+
+          <h2 className="description">
+            {isLoading && !description ? (
+              <Skeleton count={4} duration={2} />
+            ) : breakWords({ text: description, toCharLimit: 85 })}
+          </h2>
+
 
           <Stats>
-            <StatItem title={`${forksNumber} forks`}>
-              <Icon name={['fas', 'code-branch']} vendor="fa" />
-              <span className="number-stat">{formatNumber(forksNumber)}</span>
-            </StatItem>
+            {isLoading && !forksNumber ? (
+              <span style={{ marginRight: '3px' }}>
+                <Skeleton width={50} duration={2} />
+              </span>
+            ) : (
+              <StatItem title={`${forksNumber} forks`}>
+                <Icon name={['fas', 'code-branch']} vendor="fa" />
 
-            <StatItem title={`${starsNumber} stars`}>
-              <Icon name={['fas', 'star']} vendor="fa" />
-              <span className="number-stat">{formatNumber(starsNumber)}</span>
-            </StatItem>
+                <span className="number-stat">
+                  {formatNumber(forksNumber)}
+                </span>
+              </StatItem>
+            )}
+
+            {isLoading && !starsNumber ? (
+              <Skeleton width={60} duration={2} />
+            ) : (
+              <StatItem title={`${starsNumber} stars`}>
+                <Icon name={['fas', 'star']} vendor="fa" />
+
+                <span className="number-stat">
+                  {formatNumber(starsNumber)}
+                </span>
+              </StatItem>
+            )}
           </Stats>
 
           <User>
             <UserPhoto>
-              <img src={avatar_url} alt={username} />
+              {isLoading && !avatar_url ? (
+                <Skeleton circle width={30} height={30} duration={2} />
+              ) : <img src={avatar_url} alt="User" />}
             </UserPhoto>
 
             <UserInfo>
-              <p className="user-fullname">{username}</p>
-              <p className="user-username">{type}</p>
+              <p className="user-fullname">
+                {isLoading && !username ? (
+                  <Skeleton count={1} duration={2} />
+                ) : username }
+              </p>
+
+              <p className="user-username">
+                {isLoading && !type ? (
+                  <Skeleton count={1} duration={2} />
+                ) : type }
+              </p>
             </UserInfo>
           </User>
 

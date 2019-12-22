@@ -79,7 +79,7 @@ export const StatItem = styled.span`
 `;
 
 export const User = styled.span`
-  width: 100%; 
+  width: 85%; 
   border-top: 1px solid #ecf0f1;
   float: left;
   margin: 30px 0 10px 0;
@@ -102,6 +102,7 @@ export const UserPhoto = styled.span`
 `;
 
 export const UserInfo = styled.div`
+  margin-top: 1px;
   display: flex;
   flex-direction: column;
   font-size: 0.7rem;

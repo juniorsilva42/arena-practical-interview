@@ -17,7 +17,7 @@ const Repos = () => {
   /*
    * Redux store
   */
-  const { repos, pullRequests } = useSelector((state) => state);
+  const { repos } = useSelector((state) => state);
   const dispatcher = useDispatch();
 
   /*
@@ -27,8 +27,8 @@ const Repos = () => {
     dispatcher(
       getRepos({
         data: {
-          query: 'language:aa',
-          sortBy: 'aa',
+          query: 'language:Javascript',
+          sortBy: 'stars',
           page,
         },
       }),
@@ -71,6 +71,7 @@ const Repos = () => {
             forksNumber={forks_count}
             user={{ username, type, avatar_url }}
             link={`/pulls/${username}/${name}`}
+            isLoading={repos.isLoading}
           />
         );
       });
@@ -81,9 +82,20 @@ const Repos = () => {
     <>
       <PageTitle text="Github Javascript Popular Repos" />
 
-      {repos.isLoading && 'Loading...'}
-
       <CardWrapper>
+        {repos.isLoading ? (
+          <>
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+            <RepoCard isLoading={repos.isLoading} />
+          </>
+        ) : ''}
+
         {mountRepoCards(repos)}
       </CardWrapper>
     </>
