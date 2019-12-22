@@ -18,6 +18,9 @@ export const CardItem = styled.div`
   border-radius: 7px;
   margin: 0px 7px 7px 0;
   transition: 0.8s;
+  cursor: pointer;
+
+  &:hover { opacity: 0.7; }
   
   @media ${device.tablet}, ${device.mobile} {
     .list-title {
@@ -48,36 +51,55 @@ export const CardItem = styled.div`
     font-style: normal;
     color: #B8B8B8;
   }
+`;
 
-  & .list-createdat {
-    margin: 4px 0;
-    font-size: 0.8rem;
-    font-weight: 500;
-    font-style: normal;
-    color: #B8B8B8;
+export const Stats = styled.div`
+  margin-top: 10px;
+  font-size: 0.82rem;
+`;
+
+export const StatItem = styled.span`
+  margin: 0 6px;
+
+  &:first-child {
+    margin: 0;
   }
 
-  .displayed-status {
-    font-size: 0.7rem;
-    color: #B8B8B8;
+  & .number-stat {
+    margin-left: 3px;
+  }
+`;
+
+export const User = styled.span`
+  width: 100%; 
+  border-top: 1px solid #ecf0f1;
+  float: left;
+  margin: 20px 0 10px 0;
+  padding-top: 10px;
+`;
+
+export const UserPhoto = styled.span` 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #B8B8B8;
+  float: left;
+`;
+
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+
+  & p {
+    margin: 0 10px;
   }
 
-  .stats { 
-    margin-top: 40px; 
-    font-size: 1.2rem;
-    font-weight: 400;
-    font-style: normal;
-    
-    > .stats-number {
-      font-size: 2.8rem;
-      font-weight: 900;
-      font-style: bold;
-    } 
-    &:hover { 
-      cursor: pointer;
-      color: #4DC27A; 
-    }
+  & p:first-child {
+    margin-top: 2px;
   }
+
+  & > .user-fullname { font-weight: 800; }
 `;
 
 export const CardHeader = styled.div`
