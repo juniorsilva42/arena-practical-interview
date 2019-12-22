@@ -24,13 +24,14 @@ import Icon from '../Icon';
 const RepoCard = (props) => {
   const {
     title,
-    description,
     forksNumber,
     starsNumber,
     user,
     link,
     isLoading,
   } = props;
+
+  const description = props.description ? props.description : 'no description';
 
   let username;
   let type;
@@ -59,7 +60,7 @@ const RepoCard = (props) => {
           </h1>
 
           <h2 className="description">
-            {isLoading && !description ? (
+            {isLoading ? (
               <Skeleton count={4} duration={2} />
             ) : breakWords({ text: description, toCharLimit: 85 })}
           </h2>

@@ -21,7 +21,7 @@ const Repos = () => {
   const { repos } = useSelector((state) => state);
   const dispatcher = useDispatch();
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
 
   /*
    * Dispatch action to get all repos
