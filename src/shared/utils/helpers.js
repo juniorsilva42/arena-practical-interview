@@ -21,3 +21,26 @@ export const formatNumber = (number) => {
 
   return scaled.toFixed(1) + suffix;
 };
+
+export const formatDate = (date) => {
+  const newDate = new Date(date);
+
+  const day = newDate.getDate();
+  const shortMonth = newDate.toLocaleString('en-us', { month: 'short' });
+  const year = newDate.getFullYear();
+  const hours = newDate.getHours();
+  const minutes = newDate.getMinutes();
+
+  const formattedHour = hours < 10 ? `0${hours}` : hours;
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+  let fullHour = `${formattedHour}:${formattedMinutes}`;
+
+  const formatHourWithMeridian = +fullHour.substr(0, 2);
+  const h = (formatHourWithMeridian % 12) || 12;
+  const ampm = formatHourWithMeridian < 12 ? 'AM' : 'PM';
+
+  fullHour = `${h}${fullHour.substr(2, 3)} ${ampm}`;
+
+  return `${fullHour} · ${shortMonth} ${day}, ${year}`;
+};

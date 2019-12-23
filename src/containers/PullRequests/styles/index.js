@@ -76,8 +76,18 @@ export const PullRequestUser = styled.span`
     }
   }
 
-  & p {
-    margin: 3px 5px;
+  & .metadata-text-info {
+    margin: 1px 5px;
     color: #666;
   }
+
+  & .username {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  & .date {
+    margin: 0;
+    font-size: .7rem;
+  }  
 `;

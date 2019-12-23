@@ -14,6 +14,7 @@ import {
   PullRequestUser,
 } from './styles/index';
 import { getPullRequests } from '../../store/ducks/pullRequests';
+import { formatDate } from '../../shared/utils/helpers';
 
 const PullRequests = (props) => {
   /*
@@ -56,16 +57,18 @@ const PullRequests = (props) => {
       if (data && data.length > 0) {
         return data.map((pull) => {
           const {
+            id,
             html_url,
             body,
             number,
             state,
             title,
             user,
+            created_at,
           } = pull;
 
           return (
-            <a href={html_url} target="_blank" rel="noopener noreferrer">
+            <a href={html_url} target="_blank" rel="noopener noreferrer" key={id}>
               <PullRequestItem>
                 <PullRequestItemTitle>
                   <Icon
@@ -87,7 +90,9 @@ const PullRequests = (props) => {
                     <img src={user.avatar_url} alt="" />
                   </span>
 
-                  <p>{user.login}</p>
+                  <span className="metadata-text-info">
+                    <b className="username">{user.login}</b> <span className="date">at {formatDate(created_at)}</span>
+                  </span>
                 </PullRequestUser>
               </PullRequestItem>
             </a>
