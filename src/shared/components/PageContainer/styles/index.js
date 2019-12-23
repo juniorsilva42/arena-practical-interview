@@ -21,4 +21,11 @@ export const Container = styled.section`
   and (max-width: 580px) {
     width: 100%;
   }  
+
+  @media screen
+  and (min-width: 420px) 
+  and (max-width: 1024px) {
+    width: 100%;
+    margin: 20px 0;
+  }  
 `;

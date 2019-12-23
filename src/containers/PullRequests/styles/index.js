@@ -1,11 +1,34 @@
 import styled from 'styled-components';
 
+import { device } from '../../../../theme/settings/screens';
+
 export const PullRequestsContainer = styled.div`
   width: calc(200vh - 20%);
-  min-width: 100vh;
   border: 1px solid #ecf0f1;
   margin: 0 auto;
-  transition: 0.8s;
+  transition: 0.8s; 
+
+  @media screen
+  and (min-width: 768px) 
+  and (max-width: 1024px) {
+    width: 80vh;
+  }
+  
+  @media screen
+  and (min-width: 375px) 
+  and (max-width: 812px) {
+    width: 55vh;
+  }
+
+  @media screen
+  and (min-width: 375px) 
+  and (max-width: 812px) {
+    width: 55vh;
+  }
+
+  @media ${device.mobile} {
+    width: 55vh;
+  }  
 `;
 
 export const PullRequestHeader = styled.div`
@@ -19,5 +42,10 @@ export const PullRequestHeader = styled.div`
     font-size: 0.9rem;
     font-weight: 300;
     margin: 4px 0;
+
+    @media ${device.mobile} {
+      font-size: 0.6rem;
+      margin-top: 4px;
+    }
   }
 `;
