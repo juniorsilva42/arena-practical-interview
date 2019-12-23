@@ -12,7 +12,7 @@ export const CardItem = styled.div`
   background: #FFF;
   width: calc(80vh - 21%);
   min-width: 250px;
-  min-height: 35vh;
+  max-height: 50vh;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 4px;
   border: 1px solid #ecf0f1;
   border-radius: 7px;
@@ -23,10 +23,6 @@ export const CardItem = styled.div`
 
   &:hover { opacity: 0.7; }
   
-  @media ${device.tablet} {
-    height: 50vh;
-  }
-
   @media ${device.tablet}, ${device.mobile}, ${device.laptop} {
     .list-title {
       font-size: 1.5rem;
@@ -57,6 +53,42 @@ export const CardItem = styled.div`
     color: #B8B8B8;
     max-height: 100px;
   }
+
+  @media screen
+  and (min-width: 1024px) {
+    height: 35vh;
+  }
+
+  @media screen
+  and (min-width: 420px) 
+  and (max-width: 580px) {
+    margin: 5px auto;
+    width: 100vh;
+  }  
+
+  @media screen
+  and (min-width: 768px) 
+  and (max-width: 1024px) {
+    height: 25vh;
+  }
+
+  @media screen
+  and (min-width: 375px) 
+  and (max-width: 812px) {
+    height: 29vh;
+  }
+
+  @media screen
+  and (min-width: 375px) 
+  and (max-width: 667px) {
+    height: 31vh;
+  }
+
+  @media screen
+  and (min-width: 320px) 
+  and (max-width: 568px) {
+    height: 37vh;
+  }  
 `;
 
 export const Stats = styled.div`

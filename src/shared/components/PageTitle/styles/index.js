@@ -11,4 +11,11 @@ export const Heading = styled.div`
     text-align: center;
     font-size: 0.9rem;
   }
+
+  @media screen
+  and (min-width: 420px) 
+  and (max-width: 580px) {
+    margin: 0 auto;
+    text-align: center;
+  } 
 `;

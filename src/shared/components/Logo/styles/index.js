@@ -35,6 +35,20 @@ export const LogoContainer = styled.div`
       margin-top: 5px;
     }
   }
+
+  @media screen
+  and (min-width: 420px) 
+  and (max-width: 580px) {
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+
+    p { 
+      font-size: 1.1rem; 
+      margin-top: 5px;
+    }
+  }  
 `;
 
 export const Figure = styled.figure`

@@ -70,7 +70,7 @@ const PullRequests = (props) => {
   const mountPullRequests = () => {
     if (pullRequests) {
       const { data, error } = pullRequests;
-      
+
       if (error) {
         return (
           <span style={{ position: 'relative', top: '15px' }}>

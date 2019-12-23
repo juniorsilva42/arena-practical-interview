@@ -15,4 +15,10 @@ export const Container = styled.section`
   @media ${device.mobile} {
     width: 100%;
   }
+
+  @media screen
+  and (min-width: 420px) 
+  and (max-width: 580px) {
+    width: 100%;
+  }  
 `;
