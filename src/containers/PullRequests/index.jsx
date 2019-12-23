@@ -1,14 +1,29 @@
 /**
  * External Dependencies
  */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import Icon from '../../shared/components/Icon';
+import {
+  PullRequestsContainer,
+  PullRequestItem,
+  PullRequestHeader,
+  PullRequestItemTitle,
+  PullRequestItemMetadata,
+  PullRequestUser,
+} from './styles/index';
+import { getPullRequests } from '../../store/ducks/pullRequests';
 
 const PullRequests = (props) => {
-  useEffect(() => {
-    const { creator, repo } = props.match.params;
+  /*
+   * Redux store
+  */
+  const { pullRequests } = useSelector((state) => state);
+  const dispatcher = useDispatch();
 
-    console.log({ creator, repo });
-  }, []);
+  const [creator, setCreator] = useState('');
+  const [repo, setRepo] = useState('');
 
   /*
   * Dispatch action to pull request a given user and repo
@@ -19,17 +34,92 @@ const PullRequests = (props) => {
         data: {
           creator,
           repo,
+          state: 'all',
         },
       }),
     );
+  };
 
-    // dispatchAndGetPullRequests({ creator: 'stationfy', repo: 'desafio-web' })} 
+  useEffect(() => {
+    const { creator, repo } = props.match.params;
+
+    setCreator(creator);
+    setRepo(repo);
+
+    dispatchAndGetPullRequests({ creator, repo });
+  }, []);
+
+  const mountPullRequests = () => {
+    if (pullRequests) {
+      const { data } = pullRequests;
+
+      if (data && data.length > 0) {
+        return data.map((pull) => {
+          const {
+            html_url,
+            body,
+            number,
+            state,
+            title,
+            user,
+          } = pull;
+
+          return (
+            <a href={html_url} target="_blank" rel="noopener noreferrer">
+              <PullRequestItem>
+                <PullRequestItemTitle>
+                  <Icon
+                    className="icon"
+                    name={['fas', 'code-branch']}
+                    vendor="fa"
+                    color={state === 'open' ? '#40A745' : '#CB2431'}
+                    title={state}
+                  />
+                  #{number} {title}
+                </PullRequestItemTitle>
+
+                <PullRequestItemMetadata>
+                  {body}
+                </PullRequestItemMetadata>
+
+                <PullRequestUser>
+                  <span className="user-photo">
+                    <img src={user.avatar_url} alt="" />
+                  </span>
+
+                  <p>{user.login}</p>
+                </PullRequestUser>
+              </PullRequestItem>
+            </a>
+          );
+        });
+      }
+    }
+  };
+
+  const getPullRequestsGeneralInfo = () => {
+    if (pullRequests) {
+      const { data } = pullRequests;
+
+      return {
+        opened: data.filter((pull) => pull.state === 'open').length,
+        closed: data.filter((pull) => pull.state === 'closed').length,
+      };
+    }
   };
 
   return (
-    <p>
-      pull requests works!
-    </p>
+    <PullRequestsContainer>
+      <PullRequestHeader>
+        Pull Requests of <b>{`${creator} / ${repo}`}</b>
+
+        <span className="pull-status-info">
+          {getPullRequestsGeneralInfo().opened} open / {getPullRequestsGeneralInfo().closed} closed
+        </span>
+      </PullRequestHeader>
+
+      {mountPullRequests()}
+    </PullRequestsContainer>
   );
 };
 

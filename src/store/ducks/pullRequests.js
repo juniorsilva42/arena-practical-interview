@@ -45,12 +45,15 @@ export default createReducer(initialState, {
 export const getPullRequests = ({ data }) => (dispatch) => {
   dispatch({ type: Types.PULL_REQUESTS_REQUESTED });
 
-  const { creator, repo } = data;
+  const { creator, repo, state } = data;
 
   // Do request on Github API
   doRequest({
     method: 'GET',
     endpoint: `repos/${creator}/${repo}/pulls`,
+    params: {
+      state,
+    },
   })
     .then((response) => {
       dispatch({
