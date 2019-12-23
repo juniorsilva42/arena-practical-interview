@@ -54,7 +54,7 @@ A brief overview of the project file structure
 - public: contains all static project files;       
 - theme: global css (css-in-js) settings, object and more, of project;            
 - src        
--- tests: contain all functional and unit tests;
+-- tests: contain all functional and unit tests;     
 -- containers: acts as a page component that connects to the redux global store.         
 -- store: contain all action types, action creators and reducers, based on Duck Pattern.        
 -- shared: contains all items that are commonly used in the project;       
