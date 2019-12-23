@@ -32,7 +32,6 @@ const App = () => {
   useEffect(() => pageIsLoading());
 
   return (
-    // Project Done by Ivanicio Jr
     <>
       <BarProgressIndicator loading={isLoading} />
 
