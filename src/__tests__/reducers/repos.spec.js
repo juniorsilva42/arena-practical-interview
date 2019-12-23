@@ -4,7 +4,7 @@ import repoReducer, {
   reposFetchedState,
   reposFailedState,
   Types,
-} from '../store/ducks/repos';
+} from '../../store/ducks/repos';
 
 describe('Repos Reducer', () => {
   it('should return initial state null', () => {

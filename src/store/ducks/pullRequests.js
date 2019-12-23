@@ -13,29 +13,38 @@ export const Types = {
 /*
  * Initial State
  * */
-const initialState = {
+export const initialState = {
   data: [],
   isLoading: false,
 };
 
 /*
+ * Default action states
+ */
+export const pullRequestsRequestedState = state => ({
+  ...state,
+  isLoading: true,
+});
+
+export const pullRequestsFetchedState = (state, action) => ({
+  ...state,
+  data: action.payload.data,
+  isLoading: false,
+});
+
+export const pullRequestsFailedState = (state, action) => ({
+  ...state,
+  isLoading: false,
+  error: action.payload,
+});
+
+/*
  * Reducer
  */
 export default createReducer(initialState, {
-  [Types.PULL_REQUESTS_REQUESTED]: (state) => ({
-    ...state,
-    isLoading: true,
-  }),
-  [Types.PULL_REQUESTS_FETCHED]: (state, action) => ({
-    ...state,
-    data: action.payload.data,
-    isLoading: false,
-  }),
-  [Types.PULL_REQUESTS_FAILED]: (state, action) => ({
-    ...state,
-    isLoading: false,
-    error: action.payload,
-  }),
+  [Types.PULL_REQUESTS_REQUESTED]: (state) => pullRequestsRequestedState(state),
+  [Types.PULL_REQUESTS_FETCHED]: (state, action) => pullRequestsFetchedState(state, action),
+  [Types.PULL_REQUESTS_FAILED]: (state, action) => pullRequestsFailedState(state, action),
 });
 
 // Action Creators
