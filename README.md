@@ -22,36 +22,49 @@ Phone: +55 89 994112266
 #### Tech and running app:
 - written using ES6;
 - uses Yarn for package dependency management;
-- uses [Airbnb Standard Style](https://github.com/airbnb/javascript)
-- Developed on Linux Ubuntu 19.10 Budgie Distro Platform
-## Technology
+- uses [Airbnb Standard Style](https://github.com/airbnb/javascript);
+- Project with manual compilation with Webpack 4;
+- Developed on Linux Ubuntu 19.10 Budgie Distro Platform;
+## Main Technologies
 Here's a brief overview of technology stack:
--  **[React](https://reactjs.org/)** - as lib to create UI
--  **[Redux](https://www.npmjs.com/package/redux)** - as a predictable state container
--  **[Redux-thunk](https://www.npmjs.com/package/redux-thunk)** - as a tool async calls of redux actions
--  **[Styled-components](https://www.npmjs.com/package/styled-components)** - as a tool to styling screens with pure js.
- - **[Axios](https://www.npmjs.com/package/axios)** - Promise based HTTP client
- - **[Webpack](https://https://webpack.js.org/)** - To handle with bootstrap app
- - **[Jest](https://https://webpack.js.org/)** - To handle with app tests
+-  **[React](https://reactjs.org/)** - as lib to create UI;
+-  **[Redux](https://www.npmjs.com/package/redux)** - as a predictable state container;
+-  **[Redux-thunk](https://www.npmjs.com/package/redux-thunk)** - as a tool async calls of redux actions;
+-  **[Styled-components](https://www.npmjs.com/package/styled-components)** - as a tool to styling screens with pure js;
+ - **[Axios](https://www.npmjs.com/package/axios)** - Promise based HTTP client;
+ - **[Webpack](https://https://webpack.js.org/)** - To handle with bootstrap app;
+ - **[Jest](https://https://webpack.js.org/)** - To handle with app tests;
  
 A brief overview of the project file structure
 ```
-├── public
 ├── config
+├── public
+├── theme
 ├── src
-   ├── store 
    ├── __tests__ 
+   ├── containers
+   ├── store 
+	 ├── ducks
+	 ├── helpers
    ├── shared 
      ├── components
      ├── utils
-     ├── theme
-   ├── containers
 ```
+- config: contains all config of project builds;        
+- public: contains all static project files;       
+- theme: global css (css-in-js) settings, object and more, of project;            
+- src        
+-- tests: contain all functional and unit tests;
+-- containers: acts as a page component that connects to the redux global store.         
+-- store: contain all action types, action creators and reducers, based on Duck Pattern.        
+-- shared: contains all items that are commonly used in the project;       
+	---- components
+	---- utils
 
 ## Quick Start
 1. Pull the repo branch
 2. Install the dependencies with `yarn or npm install`
-3. Run the application in development mode with `yarn start`
+3. Run the application in development mode with `yarn dev`
 4. Access `http://localhost:3000/`
 
 ## CLI Brief
