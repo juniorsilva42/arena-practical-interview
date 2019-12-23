@@ -9,10 +9,13 @@ import React from 'react';
 import { AlertContainer } from './styles/index';
 
 /**
- * Component Alert
+ * Alert Component
  *
- * Render Alert
- * @return {*}
+ * @description to render a alert div for messages
+ *
+ * @param {Object} props props of component
+ *
+ * @return {*} component.
  */
 const Alert = (props) => {
   const {

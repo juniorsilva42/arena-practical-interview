@@ -10,8 +10,9 @@ import Logo from '../Logo';
 import { HeaderBox } from './styles';
 
 /**
- * Component Header
- * Render default header of pages
+ * Header Component
+ *
+ * @description Render default header of pages
  *
  * @return {*} component
  */

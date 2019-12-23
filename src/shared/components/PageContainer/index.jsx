@@ -9,11 +9,12 @@ import React from 'react';
 import { Container } from './styles';
 
 /**
- * Component Page Container
+ * Page Container Component
  *
- * Render a default container to content of pages
- * @return {*}
- */
+ * @description Render a default container to content of pages
+ *
+ * @return {*} component
+*/
 const PageContainer = (props) => {
   const divProps = { ...props };
 

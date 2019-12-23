@@ -17,11 +17,13 @@ const faLib = {
 
 /**
  * Icon Component
- * Render a passed icon with props
+ *
+ * @description Render a passed icon with props
  *
  * @param {Object} props component props.
- * @return {Object} component.
- */
+ *
+ * @return {*} component
+*/
 const Icon = (props) => {
   const {
     vendor = 'feather',

@@ -8,12 +8,19 @@ import debounce from 'lodash.debounce';
 /**
  * Internal Dependencies
  */
-import { CardWrapper } from '../../shared/components/RepoCard/styles';
 import { getRepos, loadMore } from '../../store/ducks/repos';
+import { CardWrapper } from '../../shared/components/RepoCard/styles';
 import RepoCard from '../../shared/components/RepoCard';
 import PageTitle from '../../shared/components/PageTitle';
 import Alert from '../../shared/components/Alert';
 
+/**
+ * Repos Container
+ *
+ * @description connect with global redux store and render the Repos page
+ *
+ * @return {*} component.
+ */
 const Repos = () => {
   /*
    * Redux store
@@ -21,10 +28,15 @@ const Repos = () => {
   const { repos } = useSelector((state) => state);
   const dispatcher = useDispatch();
 
+  /*
+   * Local store
+  */
   const [page, setPage] = useState(2);
 
-  /*
+  /**
    * Dispatch action to get all repos
+   *
+   * @param {number} page number of pagination
   */
   const dispatchAndGetRepos = ({ page }) => {
     dispatcher(
@@ -38,6 +50,11 @@ const Repos = () => {
     );
   };
 
+  /**
+   * Dispatch action to more repos
+   *
+   * @param {number} page number of pagination
+  */
   const dispatchAndLoadMore = ({ page }) => {
     dispatcher(
       loadMore({
@@ -50,18 +67,23 @@ const Repos = () => {
     );
   };
 
+  /**
+   * Get all repos on component mount lifecycle
+  */
   useEffect(() => {
     dispatchAndGetRepos({ page: 1 });
   }, []);
 
+  /**
+   * Fetch more repos at listening of changes on page param local state
+  */
   useEffect(() => {
-    const go = async (p) => {
-      return await dispatchAndLoadMore({ page: p });
-    };
-
-    go(page);
+    dispatchAndLoadMore({ page });
   }, [page]);
 
+  /**
+   * Listen scroll event for set page to +1 when the scroll bar is at the end
+  */
   window.onscroll = debounce(() => {
     const { innerHeight } = window;
     const { scrollTop, offsetHeight } = document.documentElement;
@@ -71,6 +93,9 @@ const Repos = () => {
     }
   }, 1);
 
+  /*
+   * Prepare and show each repo result
+  */
   const mountRepoCards = (reposList) => {
     const { data, error } = reposList;
 

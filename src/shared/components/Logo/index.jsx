@@ -9,11 +9,12 @@ import React from 'react';
 import { LogoContainer, Figure, LogoAvatar } from './styles/index';
 
 /**
- * Component Logo
+ * Logo Component
  *
- * Render Logo of Arena Co
- * @return {*}
- */
+ * @description Render default logo of Arena Co
+ *
+ * @return {*} component
+*/
 const Logo = () => (
   <a href="/" title="Arena.im">
     <LogoContainer>

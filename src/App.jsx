@@ -21,8 +21,14 @@ const App = () => {
   */
   const [isLoading, setIsLoading] = useState(false);
 
+  /*
+   * Set default loading page
+  */
   const pageIsLoading = () => window.addEventListener('load', () => setIsLoading(true));
 
+  /*
+   * Call loading component at component mount
+  */
   useEffect(() => pageIsLoading());
 
   return (

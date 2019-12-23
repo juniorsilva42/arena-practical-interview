@@ -38,10 +38,16 @@ export default createReducer(initialState, {
   }),
 });
 
-/*
- * Action Creators
- * */
-// Get Repos ACTION
+// Action Creators
+
+/**
+ * Action creator to get repos of Github API
+ *
+ * @param {Object} data to manipulate request
+ * @param {Function} dispatch to dispatch async action on store
+ *
+ * @return {*}
+*/
 export const getRepos = ({ data }) => (dispatch) => {
   dispatch({ type: Types.REPOS_REQUESTED });
 
@@ -74,6 +80,15 @@ export const getRepos = ({ data }) => (dispatch) => {
     });
 };
 
+/**
+ * Action creator to get repos more repos on Github API and merge with old results
+ *
+ * @param {Object} data to manipulate request
+ * @param {Function} dispatch to dispatch async action on store
+ * @param {Object} getState contain current state on store
+ *
+ * @return {*}
+*/
 export const loadMore = ({ data }) => (dispatch, getState) => {
   dispatch({ type: Types.REPOS_REQUESTED });
 
@@ -91,7 +106,7 @@ export const loadMore = ({ data }) => (dispatch, getState) => {
   })
     .then((response) => {
       const { data: oldData } = getState().repos;
-      
+
       dispatch({
         type: Types.REPOS_FETCHED,
         payload: {

@@ -38,10 +38,16 @@ export default createReducer(initialState, {
   }),
 });
 
-/*
- * Action Creators
- * */
-// Get Repos ACTION
+// Action Creators
+
+/**
+ * Action creator to get all pull requests
+ *
+ * @param {Object} data to manipulate request
+ * @param {Function} dispatch to dispatch async action on store
+ *
+ * @return {*}
+*/
 export const getPullRequests = ({ data }) => (dispatch) => {
   dispatch({ type: Types.PULL_REQUESTS_REQUESTED });
 

@@ -8,15 +8,25 @@ import Skeleton from 'react-loading-skeleton';
  * Internal Dependencies
  */
 import Icon from '../Icon';
+import { formatDate } from '../../utils/helpers';
 import {
   PullRequestItem,
   PullRequestItemTitle,
   PullRequestItemMetadata,
   PullRequestUser,
 } from './styles/index';
-import { formatDate } from '../../utils/helpers';
 
+/**
+ * PullRequestCard Component
+ *
+ * @description render a card of pull request
+ *
+ * @param {Object} props props of component
+ *
+ * @return {*} component.
+ */
 const PullRequestCard = (props) => {
+  // Extract all props
   const {
     id,
     title,
@@ -28,6 +38,7 @@ const PullRequestCard = (props) => {
     isLoading,
   } = props;
 
+  // Segment any properties to avoid errors of null cases
   const body = props.body ? props.body : 'no description';
 
   let username;

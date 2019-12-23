@@ -10,11 +10,11 @@ import TopBarProgressIndicator from 'react-topbar-progress-indicator';
 
 /**
  * BarProgressIndicator Component
- * 
+ *
  * Render a top progress bar on load page
  *
  * @param {Object} props component props.
- * 
+ *
  * @return {Object} component.
  */
 const ProgressBarIndicator = (props) => {

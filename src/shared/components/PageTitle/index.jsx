@@ -9,9 +9,10 @@ import React from 'react';
 import { Heading } from './styles';
 
 /**
- * Component Page Container
+ * Page Title Component
  *
- * Render a default container to content of pages
+ * Render a default page title heading to introduction of content of the pages
+ *
  * @return {*}
  */
 const PageTitle = (props) => (

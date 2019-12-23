@@ -4,13 +4,24 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+/**
+ * Internal Dependencies
+ */
 import PullRequestCard from '../../shared/components/PullRequestCard';
+import { getPullRequests } from '../../store/ducks/pullRequests';
 import {
   PullRequestsContainer,
   PullRequestHeader,
 } from './styles/index';
-import { getPullRequests } from '../../store/ducks/pullRequests';
 
+/**
+ * PullRequests Container
+ *
+ * @description connect with global redux store and render the Pull Requests page
+ *
+ * @param {Object} props component props.
+ * @return {*} component.
+ */
 const PullRequests = (props) => {
   /*
    * Redux store
@@ -18,6 +29,9 @@ const PullRequests = (props) => {
   const { pullRequests } = useSelector((state) => state);
   const dispatcher = useDispatch();
 
+  /*
+   * Local store
+  */
   const [creator, setCreator] = useState('');
   const [repo, setRepo] = useState('');
 
@@ -36,15 +50,22 @@ const PullRequests = (props) => {
     );
   };
 
+  /*
+   * Get pull requests of a given creator and repo passed on url
+  */
   useEffect(() => {
     const { creator, repo } = props.match.params;
 
     setCreator(creator);
     setRepo(repo);
 
+    // Get pull requests
     dispatchAndGetPullRequests({ creator, repo });
   }, []);
 
+  /*
+   * Prepare and show each pull request result
+  */
   const mountPullRequests = () => {
     if (pullRequests) {
       const { data } = pullRequests;
@@ -62,6 +83,7 @@ const PullRequests = (props) => {
             created_at,
           } = pull;
 
+          // Render by simple functional card
           return (
             <PullRequestCard
               id={id}
@@ -79,6 +101,9 @@ const PullRequests = (props) => {
     }
   };
 
+  /*
+   * Get general info of pulls: items with state open and closed
+  */
   const getPullRequestsGeneralInfo = () => {
     if (pullRequests) {
       const { data } = pullRequests;

@@ -21,7 +21,27 @@ import {
 } from './styles';
 import Icon from '../Icon';
 
+/**
+ * RepoCard Component
+ *
+ * @description render a card of repository
+ *
+ * @param {Object} props props of component
+ *
+ * @return {*} component.
+ */
 const RepoCard = (props) => {
+  /*
+   * Local store
+  */
+  const [redirect, setIsRedirect] = useState({});
+
+  /*
+   * Function to redirect to pull requests page
+  */
+  const goToPullsPage = (linkPath) => setIsRedirect({ redirecting: true, link: linkPath });
+
+  // Extract all props
   const {
     title,
     forksNumber,
@@ -31,6 +51,7 @@ const RepoCard = (props) => {
     isLoading,
   } = props;
 
+  // Segment any properties to avoid errors of null cases
   const description = props.description ? props.description : 'no description';
 
   let username;
@@ -42,10 +63,6 @@ const RepoCard = (props) => {
     type = user.type;
     avatar_url = user.avatar_url;
   }
-
-  const [redirect, setIsRedirect] = useState({});
-
-  const goToPullsPage = (linkPath) => setIsRedirect({ redirecting: true, link: linkPath });
 
   return (
     <>
