@@ -101,7 +101,6 @@ const Repos = () => {
             forksNumber={forks_count}
             user={{ username, type, avatar_url }}
             link={`/pulls/${username}/${name}`}
-            isLoading={repos.isLoading}
           />
         );
       });
@@ -114,12 +113,9 @@ const Repos = () => {
 
       <CardWrapper>
         {mountRepoCards(repos)}
+
         {repos.isLoading ? (
           <>
-            <RepoCard isLoading={repos.isLoading} />
-            <RepoCard isLoading={repos.isLoading} />
-            <RepoCard isLoading={repos.isLoading} />
-            <RepoCard isLoading={repos.isLoading} />
             <RepoCard isLoading={repos.isLoading} />
             <RepoCard isLoading={repos.isLoading} />
             <RepoCard isLoading={repos.isLoading} />

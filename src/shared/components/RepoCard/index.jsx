@@ -54,7 +54,7 @@ const RepoCard = (props) => {
       <CardItem title="View repo details" onClick={() => goToPullsPage(link)}>
         <CardBody>
           <h1 className="list-title">
-            {isLoading && !title ? (
+            {isLoading ? (
               <Skeleton count={1} duration={2} />
             ) : title}
           </h1>
@@ -67,7 +67,7 @@ const RepoCard = (props) => {
 
 
           <Stats>
-            {isLoading && !forksNumber ? (
+            {isLoading ? (
               <span style={{ marginRight: '3px' }}>
                 <Skeleton width={50} duration={2} />
               </span>
@@ -81,7 +81,7 @@ const RepoCard = (props) => {
               </StatItem>
             )}
 
-            {isLoading && !starsNumber ? (
+            {isLoading ? (
               <Skeleton width={60} duration={2} />
             ) : (
               <StatItem title={`${starsNumber} stars`}>
