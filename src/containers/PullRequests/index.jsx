@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 /**
  * Internal Dependencies
  */
+import Alert from '../../shared/components/Alert';
 import PullRequestCard from '../../shared/components/PullRequestCard';
 import { getPullRequests } from '../../store/ducks/pullRequests';
 import {
@@ -68,7 +69,18 @@ const PullRequests = (props) => {
   */
   const mountPullRequests = () => {
     if (pullRequests) {
-      const { data } = pullRequests;
+      const { data, error } = pullRequests;
+      
+      if (error) {
+        return (
+          <span style={{ position: 'relative', top: '15px' }}>
+            <Alert
+              type="error"
+              message="There was an error trying to get the pull requests. Probably this repo doesn't exist."
+            />
+          </span>
+        );
+      }
 
       if (data && data.length > 0) {
         return data.map((pull) => {
