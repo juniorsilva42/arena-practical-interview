@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PullRequestCard Component should render a Pull Request Card correctly 1`] = `
+<Fragment>
+  <a
+    href="null"
+    key="1"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <styled.div>
+      <styled.span>
+        <span>
+          <Icon
+            className="icon"
+            color="#40A745"
+            name={
+              Array [
+                "fas",
+                "code-branch",
+              ]
+            }
+            title="open"
+            vendor="fa"
+          />
+          <span>
+            #
+            5422
+             
+            pull request title
+          </span>
+        </span>
+      </styled.span>
+      <styled.span>
+        content of pull request
+      </styled.span>
+      <styled.span>
+        <span
+          className="user-photo"
+        >
+          <img
+            alt="User"
+            src={null}
+          />
+        </span>
+        <span
+          className="metadata-text-info"
+        >
+          <b
+            className="username"
+          >
+            jsiilva1
+          </b>
+          <span
+            className="date"
+          >
+             — 
+            1:16 PM · Dec 23, 2019
+          </span>
+        </span>
+      </styled.span>
+    </styled.div>
+  </a>
+</Fragment>
+`;

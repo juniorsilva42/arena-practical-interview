@@ -10,6 +10,7 @@ exports[`RouterDispatcher Component should render the switch router correctly 1`
     />
     <Route
       component={[Function]}
+      exact={true}
       path="/pulls/:creator/:repo"
     />
   </Switch>

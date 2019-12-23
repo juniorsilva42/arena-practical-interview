@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Logo Component should render the Arena Company Logo correctly 1`] = `
-<styled.div>
-  <styled.figure>
-    <styled.img
-      alt="Arena.im logo"
-      title="Arena.im"
-    />
-  </styled.figure>
-  <p>
-    Practical Frontend Interview
-  </p>
-</styled.div>
+<a
+  href="/"
+  title="Arena.im"
+>
+  <styled.div>
+    <styled.figure>
+      <styled.img
+        alt="Arena.im logo"
+      />
+    </styled.figure>
+    <p>
+      Practical Frontend Interview
+    </p>
+  </styled.div>
+</a>
 `;

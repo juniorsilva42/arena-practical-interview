@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Component should render the Alert Component correctly 1`] = `
+<styled.span
+  type="error"
+>
+  Message test
+</styled.span>
+`;

@@ -1,78 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RepoCard Component should render a Repo Card correctly 1`] = `
-<styled.div
-  title="View repo details"
->
-  <styled.div>
-    <h1
-      className="list-title"
-    >
-      react
-    </h1>
-    <h2
-      className="description"
-    >
-      A declarative, efficient, and flexible JavaScript library for building user interface...
-    </h2>
+<Fragment>
+  <styled.div
+    onClick={[Function]}
+    title="View repo details"
+  >
     <styled.div>
-      <styled.span
-        title="27000 forks"
+      <h1
+        className="list-title"
       >
-        <Icon
-          name={
-            Array [
-              "fas",
-              "code-branch",
-            ]
-          }
-          vendor="fa"
-        />
-        <span
-          className="number-stat"
-        >
-          27.0k
-        </span>
-      </styled.span>
-      <styled.span
-        title="141000 stars"
+        react
+      </h1>
+      <h2
+        className="description"
       >
-        <Icon
-          name={
-            Array [
-              "fas",
-              "star",
-            ]
-          }
-          vendor="fa"
-        />
-        <span
-          className="number-stat"
+        A declarative, efficient, and flexible JavaScript library for building user interface...
+      </h2>
+      <styled.div>
+        <styled.span
+          title="27000 forks"
         >
-          141.0k
-        </span>
+          <Icon
+            name={
+              Array [
+                "fas",
+                "code-branch",
+              ]
+            }
+            vendor="fa"
+          />
+          <span
+            className="number-stat"
+          >
+            27.0k
+          </span>
+        </styled.span>
+        <styled.span
+          title="141000 stars"
+        >
+          <Icon
+            name={
+              Array [
+                "fas",
+                "star",
+              ]
+            }
+            vendor="fa"
+          />
+          <span
+            className="number-stat"
+          >
+            141.0k
+          </span>
+        </styled.span>
+      </styled.div>
+      <styled.span>
+        <styled.span>
+          <img
+            alt="User"
+            src="https://avatars2.githubusercontent.com/u/69631?s=200&v=4"
+          />
+        </styled.span>
+        <styled.div>
+          <p
+            className="user-fullname"
+          >
+            facebook
+          </p>
+          <p
+            className="user-username"
+          >
+            Organization
+          </p>
+        </styled.div>
       </styled.span>
     </styled.div>
-    <styled.span>
-      <styled.span>
-        <img
-          alt="facebook"
-          src="https://avatars2.githubusercontent.com/u/69631?s=200&v=4"
-        />
-      </styled.span>
-      <styled.div>
-        <p
-          className="user-fullname"
-        >
-          facebook
-        </p>
-        <p
-          className="user-username"
-        >
-          Organization
-        </p>
-      </styled.div>
-    </styled.span>
   </styled.div>
-</styled.div>
+</Fragment>
 `;
