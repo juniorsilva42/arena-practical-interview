@@ -19,23 +19,32 @@ export const initialState = {
 };
 
 /*
+ * Default action states
+ */
+export const reposRequestedState = state => ({
+  ...state,
+  isLoading: true,
+});
+
+export const reposFetchedState = (state, action) => ({
+  ...state,
+  data: action.payload.data,
+  isLoading: false,
+});
+
+export const reposFailedState = (state, action) => ({
+  ...state,
+  isLoading: false,
+  error: action.payload,
+});
+
+/*
  * Reducer
  */
 export default createReducer(initialState, {
-  [Types.REPOS_REQUESTED]: (state) => ({
-    ...state,
-    isLoading: true,
-  }),
-  [Types.REPOS_FETCHED]: (state, action) => ({
-    ...state,
-    data: action.payload.data,
-    isLoading: false,
-  }),
-  [Types.REPOS_FAILED]: (state, action) => ({
-    ...state,
-    isLoading: false,
-    error: action.payload,
-  }),
+  [Types.REPOS_REQUESTED]: (state) => reposRequestedState(state),
+  [Types.REPOS_FETCHED]: (state, action) => reposFetchedState(state, action),
+  [Types.REPOS_FAILED]: (state, action) => reposFailedState(state, action),
 });
 
 // Action Creators

@@ -13,6 +13,7 @@ import { CardWrapper } from '../../shared/components/RepoCard/styles';
 import RepoCard from '../../shared/components/RepoCard';
 import PageTitle from '../../shared/components/PageTitle';
 import Alert from '../../shared/components/Alert';
+import { formatDate } from '../../shared/utils/helpers';
 
 /**
  * Repos Container
