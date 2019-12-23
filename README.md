@@ -12,7 +12,7 @@ Phone: +55 89 994112266
   
 ## Table of Contents
 - [Overview](#overview)
-- [Technology](#technology)
+- [Technology](#main-technologies)
 - [Quick Start](#quick-start)
 - [CLI Brief](#cli-brief)
 - [Programming Standards - Airbnb Style Guides](#programming-standards---airbnb-style-guides)
@@ -58,7 +58,7 @@ A brief overview of the project file structure
 -- containers: acts as a page component that connects to the redux global store.         
 -- store: contain all action types, action creators and reducers, based on Duck Pattern.        
 -- shared: contains all items that are commonly used in the project;       
-	---- components
+	---- components      
 	---- utils
 
 ## Quick Start
