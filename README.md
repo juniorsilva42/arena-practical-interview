@@ -53,13 +53,13 @@ A brief overview of the project file structure
 - config: contains all config of project builds;        
 - public: contains all static project files;       
 - theme: global css (css-in-js) settings, object and more, of project;            
-- src        
+- src:        
 -- tests: contain all functional and unit tests;     
 -- containers: acts as a page component that connects to the redux global store.         
 -- store: contain all action types, action creators and reducers, based on Duck Pattern.        
 -- shared: contains all items that are commonly used in the project;       
-	---- components      
-	---- utils
+	 ---- components      
+	 ---- utils
 
 ## Quick Start
 1. Pull the repo branch
@@ -70,6 +70,7 @@ A brief overview of the project file structure
 ## CLI Brief
 - `yarn dev` - start the app locally/development 
 - `yarn test` - run tests
+- `yarn test:coverage` - get coverage of test suite
 - `yarn lint` - lint codebase using Airbnb Standard Style
 - `yarn lint:fix` - fix code according to ESlint Airbnb Style guide
 
